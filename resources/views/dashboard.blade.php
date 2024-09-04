@@ -72,7 +72,7 @@
                                                         <h5 class="card-title text-white text-uppercase text-center">{{$product->title }}</h5>
                                                         <h6 class="card-price text-white text-center">{{ number_format($product->price*1000, 0, ',', '.') }}VND<span class="term">/month</span></h6>
                                                     </div>
-                                                    <div class="card-body">
+                                                    <div class="card-body p-0">
                                                         <ul class="list-group list-group-flush">
                                                             <li class="list-group-item bg-transparent"><span>Thông tin gói: {{$product->title }}</span></li>
                                                             <li class="list-group-item bg-transparent">HSD: {{$product->expiration_date}}</li>
@@ -116,22 +116,22 @@
                                                         <div class="d-grid text-center">
                                                             <div class="d-flex flex-wrap justify-content-center">
                                                                 <div class="p-2">
-                                                                    <button class="btn btn-light w-100 radius-30" style="padding: 0.5rem;">
+                                                                    <button class="btn btn-light w-100 radius-30" style="font-size: 12PX;">
                                                                         <i class="bx bx-cog bx-spin"></i> Thay đổi SNI
                                                                     </button>
                                                                 </div>
                                                                 <div class="p-2">
-                                                                    <button class="btn btn-light w-100 radius-30" onclick="window.location.href='http://13.213.30.33:8000/user/document'">
+                                                                    <button class="btn btn-light w-100 radius-30" style="font-size: 12PX;" onclick="window.location.href='http://13.213.30.33:8000/user/document'">
                                                                         <i class="lni lni-book"></i> Hướng dẫn sử dụng
                                                                     </button>
                                                                 </div>
                                                                 <div class="p-2">
-                                                                    <button class="btn btn-light w-100 radius-30">
+                                                                    <button class="btn btn-light w-100 radius-30" style="font-size: 12PX;">
                                                                         <i class="lni lni-apple"></i> Lấy id Apple
                                                                     </button>
                                                                 </div>
                                                                 <div class="p-2">
-                                                                    <button class="btn btn-light w-100 radius-30">
+                                                                    <button class="btn btn-light w-100 radius-30" style="font-size: 12PX;">
                                                                         <i class="fadeIn animated bx bx-reset"></i> Reset liên kết server
                                                                     </button>
                                                                 </div>
