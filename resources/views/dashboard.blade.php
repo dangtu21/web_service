@@ -114,20 +114,21 @@
                                                             
                                                         </ul>
                                                         <div class="d-grid text-center">
-                                                            <div class="d-flex justify-content-center">
-                                                                <button  class="btn btn-light my-2 radius-30 mx-2">
+                                                            <div class="d-flex flex-wrap justify-content-center">
+                                                                <button class="btn btn-light my-2 radius-30 mx-2">
                                                                     <i class="bx bx-cog bx-spin"></i> Thay đổi SNI
                                                                 </button>
-                                                                <button class="btn btn-light my-2 radius-30 mx-2" onclick="window.location.href='{{ route('document') }}'">
+                                                                <button class="btn btn-light my-2 radius-30 mx-2" onclick="window.location.href='http://13.213.30.33:8000/user/document'">
                                                                     <i class="lni lni-book"></i> Hướng dẫn sử dụng
                                                                 </button>
-                                                                <button  class="btn btn-light my-2 radius-30 mx-2">
+                                                                <button class="btn btn-light my-2 radius-30 mx-2">
                                                                     <i class="lni lni-apple"></i> Lấy id Apple
                                                                 </button>
+                                                                <button class="btn btn-light my-2 radius-30" style="margin:0 20px">
+                                                                    <i class="fadeIn animated bx bx-reset"></i> Reset liên kết server
+                                                                </button>
                                                             </div>
-                                                            <button class="btn btn-light my-2 radius-30" style="margin:0 20px">
-                                                                <i class="fadeIn animated bx bx-reset"></i> Reset liên kết server
-                                                            </button>
+
                                                         </div>
                                                         <div class="row" style="margin:10px 20px;padding:10px 20px; color: #fff; background-color: rgb(255 255 255 / 15%); border-color: rgb(255 255 255 / 35%);border-radius:20px">
                                                             <button  class="btn btn-light my-3 radius-30 mx-auto" id="synchronize"  onclick="listAppOpen('{{ $product->id }}' )">
