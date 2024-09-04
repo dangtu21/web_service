@@ -66,7 +66,7 @@
                                         <p>No products found.</p>
                                     @else
                                         @foreach($orderDetailsWithProducts as $product)
-                                            <div class="col-md-6">
+                                            <div class="col-md-6 p-0">
                                                 <div class="card mb-5" style="border-radius:20px">
                                                     <div class="card-header bg-light py-3" style="border-radius:20px">
                                                         <h5 class="card-title text-white text-uppercase text-center">{{$product->title }}</h5>
