@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Crypt;
+use \Firebase\JWT\JWT;
 class UserController extends Controller
 {   
     public function dashboard()
@@ -58,8 +59,9 @@ class UserController extends Controller
         $token = $request->query('token');
         $flag = $request->query('flag');
     
-        
-            $decoded = Crypt::decrypt($token);
+        $key = env('JWT_SECRET');
+
+            $decoded = JWT::decode($token, $key, ['HS256']);
             // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
             $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
             ->where('user_id', $decoded['sub'])
@@ -142,7 +144,8 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlw
             'product_id'=>$product_id,
             'random'=>rand().time()
         ];
-        $token=Crypt::encrypt($data);
+        $key = env('JWT_SECRET');
+        $token = JWT::encode($data, $key);
         return $token;
     }
     
