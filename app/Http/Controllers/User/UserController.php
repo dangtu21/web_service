@@ -57,7 +57,7 @@ class UserController extends Controller
         // Lấy các query parameters từ request
         $token = $request->query('token');
         $flag = $request->query('flag');
-        dd($token);
+    
         
             $decoded = Crypt::decrypt($token);
             // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
