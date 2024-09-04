@@ -127,7 +127,7 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlw
             'sub' => Auth::user()->id,
             'product_id'=>$product_id
         ];
-        $token=JWTAuth::getJWTProvider()->encode($data);
+        $token = hash('sha256', json_encode($data));
         return $token;
     }
     
