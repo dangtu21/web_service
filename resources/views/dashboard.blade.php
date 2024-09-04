@@ -200,60 +200,59 @@
                                     <div class="overlayx" id="overlayx"></div>
                                     <div class="menu2111" id="menu2111" style="padding-bottom: 15px">
                                         
-                                            <ul class="list-ustyled" style="padding-left:0">
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
-                                                    <button  onclick="submitShadownRocket(1)>
-                                                        <div class="d-flex align-items-center" " >
-                                                            <div class="text-center" style="width: 30%;">    
-                                                                <img class="mr-2" src="{{ asset('assets/images/app/copy.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem"></img>
-      
-                                                            </div>       
-                                                            <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Lấy liên kết server</p>
+                                            <ul class="list-unstyled" style="padding-left: 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
+                                                    <button onclick="submitShadownRocket(1)">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="text-center" style="width: 30%;">
+                                                                <img class="mr-2" src="{{ asset('assets/images/app/copy.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                            </div>
+                                                            <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Lấy liên kết server</p>
                                                         </div>
                                                     </button>
                                                 </li>
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/qr.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
-                                                        </div>       
-                                                        <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Quét mã QR để đăng kí</p>
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/qr.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Quét mã QR để đăng kí</p>
                                                     </div>
                                                 </li>
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/sing-box.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
-                                                        </div>       
-                                                        <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Sing-Box</p>
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/sing-box.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>
                                                     </div>
                                                 </li>
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashmeta.jpg')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
-                                                        </div>       
-                                                        <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào ClashMeta</p>
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashmeta.jpg') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ClashMeta</p>
                                                     </div>
                                                 </li>
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/karing.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
-                                                        </div>       
-                                                        <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Karing</p>
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/karing.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Karing</p>
                                                     </div>
                                                 </li>
-                                                <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
-                                                        <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashforwindown.Default')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
-                                                        </div>       
-                                                        <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Clash for Windown</p>
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashforwindows.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Clash for Windows</p>
                                                     </div>
                                                 </li>
-                                               
                                             </ul>
+
                                             <div class="text-center">
                                                 <button class="btn btn-secondary" onclick="listAppClose()">Đóng Menu</button>
 
