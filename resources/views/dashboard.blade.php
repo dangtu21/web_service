@@ -265,29 +265,30 @@
                                                                     var OS = getOS();
                                                                     
                                                                     if(OS=='Windows'){
-                                                                        var winString = '<ul class="list-unstyled" style="padding-left: 0;">' +
-                                                                        '<li style="border-bottom: 1px solid black; padding: 6px 0;">' +
-                                                                        '<div class="d-flex align-items-center">' +
-                                                                        '<div class="text-center" style="width: 30%;">' +
-                                                                        '<img class="mr-2" src="{{ asset(\'assets/images/app/sing-box.png\')}}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
-                                                                        '</div>' +
-                                                                        '<p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>' +
-                                                                        '</div>' +
-                                                                        '</li>' +
-                                                                        // Repeat <li> elements as needed
-                                                                        '<li style="border-bottom: 1px solid black; padding: 6px 0;">' +
-                                                                        '<div class="d-flex align-items-center">' +
-                                                                        '<div class="text-center" style="width: 30%;">' +
-                                                                        '<img class="mr-2" src="{{ asset(\'assets/images/app/sing-box.png\')}}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
-                                                                        '</div>' +
-                                                                        '<p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>' +
-                                                                        '</div>' +
-                                                                        '</li>' +
-                                                                        // Add more items as needed
-                                                                        '</ul>' +
-                                                                        '<div class="text-center">' +
-                                                                        '<button class="btn btn-secondary mt-3" id="closeMenu">Đóng Menu</button>' +
-                                                                        '</div>';
+                                                                        var winString = `
+                                                                                    <ul class="list-unstyled" style="padding-left: 0;">
+                                                                                        <li style="border-bottom: 1px solid black; padding: 6px 0;">
+                                                                                            <div class="d-flex align-items-center">
+                                                                                                <div class="text-center" style="width: 30%;">
+                                                                                                    <img class="mr-2" src="{{ asset('assets/images/app/sing-box.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                                                                </div>
+                                                                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <!-- Repeat <li> elements as needed -->
+                                                                                        <li style="border-bottom: 1px solid black; padding: 6px 0;">
+                                                                                            <div class="d-flex align-items-center">
+                                                                                                <div class="text-center" style="width: 30%;">
+                                                                                                    <img class="mr-2" src="{{ asset('assets/images/app/sing-box.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                                                                </div>
+                                                                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <div class="text-center">
+                                                                                        <button class="btn btn-secondary mt-3" id="closeMenu">Đóng Menu</button>
+                                                                                    </div>`;
+
 
                                                                         // document.getElementById('menu2111').innerHTML = winString;
 
