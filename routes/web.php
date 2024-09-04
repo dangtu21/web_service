@@ -34,12 +34,11 @@ Route::get("/ForgotPassword", function() {
 Route::get("/ResetPassword", function() {
     return view('resetPassword');
 })->name('ResetPassword');
+Route::get('/subscribe', [UserController::class, 'subscribeLink']);
 Route::post('/LogIn',[AdminController::class,'login'])->name('LogIn');
 // Sử dụng một tiền tố hợp lệ, ví dụ: 'admin'
 Route::prefix('user')->middleware('user')->group(function (){
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })-> name("home");
+    Route::get('/dashboard',[UserController::class,'dashboard'])-> name("home");
     Route::get("/history", function() {
         return view('purchaseHistory');
     })->name('history');
@@ -47,7 +46,19 @@ Route::prefix('user')->middleware('user')->group(function (){
     Route::get("/store",[UserController::class,'store'])->name('store');
     Route::get("/payment",  [UserController::class,'payment'])->name('payment');
     Route::post("/postPayment",  [UserController::class,'postPayment'])->name('postPayment');
+
+    Route::get("/document", function() {
+        return view('document');
+    })->name('document');
     Route::get("/api/shadowrocket",  [UserController::class,'getServer'])->name('shadowrocket');
+    Route::get("/listApp", function() {
+        return view('listApp');
+    })->name('listApp');
+    
+    // web.php
+    Route::get('/paymentSuccess', [UserController::class, 'checkPaymentMain'])->name('paymentSuccess');
+
+    
 });
 
 

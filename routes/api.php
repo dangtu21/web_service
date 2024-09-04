@@ -30,6 +30,10 @@ Route::group([
     Route::post('refresh', [AuthController::class,'refresh']);
     Route::get('me', [AuthController::class,'me']);
     Route::get('server', [AuthController::class,'getServer']);
+    Route::get('subscribe', [AuthController::class, 'subscribe']);
+
+    Route::get('shadownroket', [AuthController::class, 'subscribe']);
+
 
 
 });

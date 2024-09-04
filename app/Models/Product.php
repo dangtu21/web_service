@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = 'Product'; // Tên bảng, chú ý là 'Product' viết hoa theo định nghĩa của bạn
+    protected $table = 'product'; // Tên bảng, chú ý là 'Product' viết hoa theo định nghĩa của bạn
     protected $primaryKey = 'id'; // Khóa chính của bảng
     public $timestamps = true; // Sử dụng timestamps (created_at và updated_at)
 

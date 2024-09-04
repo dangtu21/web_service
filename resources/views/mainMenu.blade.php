@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 	<!--favicon-->
   <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png">
 
@@ -24,6 +25,7 @@
   <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
 	
 	<title>Dashcube - Multipurpose Bootstrap5 Admin Template</title>
+	@yield('css')
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -52,7 +54,7 @@
 					
 				</li>
 				<li>
-					<a href="javascript:;" class="has-arrow">
+					<a href="{{route('document')}}" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-folder"></i>
 						</div>
 						<div class="menu-title">Hướng dẫn sử dụng</div>
@@ -60,7 +62,7 @@
 					
 				</li>
                 <li>
-					<a href="javascript:;" class="has-arrow">
+					<a href="{{route('listApp')}}" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>
 						</div>
 						<div class="menu-title">Ứng dụng</div>
@@ -69,7 +71,7 @@
 				</li>
 				<li class="menu-label">Gói dịch vụ</li>
 				<li>
-					<a href="widgets.html">
+					<a href="{{route('store')}}">
 						<div class="parent-icon"><i class="bx bx-cart"></i>
 						</div>
 						<div class="menu-title">Mua gói dịch vụ</div>
@@ -809,9 +811,7 @@
 		<!--end overlay-->
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
 		<!--End Back To Top Button-->
-		<footer class="page-footer">
-			<p class="mb-0">Copyright © 2023. All right reserved.</p>
-		</footer>
+		
 	</div>
 	<!--end wrapper-->
 	<!--start switcher-->
@@ -868,7 +868,7 @@
       new PerfectScrollbar(".review-list");
       new PerfectScrollbar(".chat-talk");
   </script>
-
+	
   <!-- App JS -->
   <script src="{{ asset('assets/js/app.js') }}"></script>
 
