@@ -55,16 +55,16 @@ class UserController extends Controller
     }
     public function subscribe(Request $request)
     {
-        // Lấy các query parameters từ request
-        $token = $request->query('token');
-        $flag = $request->query('flag');
+        // // Lấy các query parameters từ request
+        // $token = $request->query('token');
+        // $flag = $request->query('flag');
     
 
-            $decoded = JWTAuth::getJWTProvider()->decode($token);
-            // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
-            $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
-            ->where('user_id', $decoded['sub'])
-            ->first();
+        //     $decoded = JWTAuth::getJWTProvider()->decode($token);
+        //     // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
+        //     $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
+        //     ->where('user_id', $decoded['sub'])
+        //     ->first();
             if ($orderDetail) {
                 $vmess_links = '
                 STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
