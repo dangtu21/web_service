@@ -3,7 +3,7 @@
 
 
 @section('content')
-        <div class="page-content " style="padding: 1.5rem 4.5rem 0 4.5rem;" >
+        <div class="page-content p-3" style="padding: 1.5rem 4.5rem 0 4.5rem;" >
             <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
 					<div class="ps-3">
@@ -16,9 +16,9 @@
 						</nav>
 					</div>
                 </div>  
-                            <div class="row">
+                            <div class="col w-100">
                                 <div class="card mb-5 ">
-                                    <div class="row card-header bg-light py-3">
+                                    <div class="col card-header bg-light py-3">
                                         
                                         <h3 class="card-price text-white text-center">Cách dùng cho Android</h3>
                                     </div>
@@ -42,9 +42,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="col w-100">
                                 <div class="card mb-5 ">
-                                    <div class="row card-header bg-light py-3">
+                                    <div class="col card-header bg-light py-3">
                                         
                                         <h3 class="card-price text-white text-center">Cách dùng cho IOS</h3>
                                     </div>
@@ -65,9 +65,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="col">
                                 <div class="card mb-5 ">
-                                    <div class="row card-header bg-light py-3">
+                                    <div class="col card-header bg-light py-3">
                                         
                                         <h3 class="card-price text-white text-center">Hướng dẫn fix thông báo </h3>
                                     </div>
@@ -87,9 +87,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="col">
                                 <div class="card mb-5 ">
-                                    <div class="row card-header bg-light py-3">
+                                    <div class="col card-header bg-light py-3">
                                         
                                         <h3 class="card-price text-white text-center">Hướng dẫn phát mạng </h3>
                                     </div>
@@ -133,9 +133,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="col">
                                 <div class="card mb-5 ">
-                                    <div class="row card-header bg-light py-3">
+                                    <div class="col card-header bg-light py-3">
                                         
                                         <h3 class="card-price text-white text-center">Hướng dẫn cài đặt nền </h3>
                                     </div>
