@@ -10,7 +10,7 @@
 						<div id="invoice">
     
 							<div class="invoice overflow-auto">
-								<div style="min-width: 600px">
+								<div >
 									
 									<main>
                                     <div class= "conten">
@@ -320,8 +320,6 @@
                                             }
                                         }
                                         function submitShadownRocket(id) {
-
-                                                alert("hello x");
                                                 // Gửi request GET đến route /subscribe
                                                 $.ajax({
                                                     url: '/subscribe',
