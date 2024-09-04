@@ -35,7 +35,7 @@ class UserController extends Controller
         // Tạo URL cơ bản
         $link = "sub://";
   
-        $domain = "13.213.30.33/api/subscribe?token=";
+        $domain = "13.213.30.33:8000/api/subscribe?token=";
         
         // Tạo token cho sản phẩm
         $token = $this->createTokenProduct($request->product_id);
