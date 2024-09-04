@@ -55,17 +55,6 @@ class UserController extends Controller
     }
     public function subscribe(Request $request)
     {
-        // Lấy các query parameters từ request
-        $token = $request->query('token');
-        $flag = $request->query('flag');
-    
-        try{
-            $decoded = JWTAuth::getJWTProvider()->decode($token);
-            // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
-            $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
-            ->where('user_id', $decoded['sub'])
-            ->first();
-            if ($orderDetail) {
                 $vmess_links = '
                 STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
@@ -129,16 +118,9 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTYubWFuZ3Zp
 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B59%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B363%20MIX%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B60%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B397%20LOF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
 ';
-
                 $encodedData = base64_encode($vmess_links);
                 return response($encodedData);
-            } else {
-                $bool = false; // Nếu không tìm thấy, đặt $bool là false
-            }
-        }catch (JWTException $e){
-            return $e;
-        }
-        
+            
     }
     public function createTokenProduct($product_id){
         $data = [
