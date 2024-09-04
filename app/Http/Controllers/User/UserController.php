@@ -48,7 +48,7 @@ class UserController extends Controller
         
         // Nối phần mã hóa vào link
         $link = $link . $code;
-        $link = $link . "#MANGVIP.COM";
+        $link = $link . "#danganhtu.id.vn";
        
         // Chuyển hướng người dùng đến liên kết
         return response()->json(['redirect_url' => $link]);
