@@ -57,7 +57,7 @@ class UserController extends Controller
         // Lấy các query parameters từ request
         $token = $request->query('token');
         $flag = $request->query('flag');
-        dd($token);
+    
         
             $decoded = Crypt::decrypt($token);
             // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
@@ -128,7 +128,7 @@ class UserController extends Controller
                     ';
 
                 $encodedData = base64_encode($vmess_links);
-                return response($encodedData, 200)->header('Content-Type', 'text/plain');
+                return response($encodedData);
             } else {
                 $bool = false; // Nếu không tìm thấy, đặt $bool là false
             }
