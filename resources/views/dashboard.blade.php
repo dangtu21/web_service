@@ -201,15 +201,15 @@
                                     <div class="menu2111" id="menu2111" style="padding-bottom: 15px">
                                         
                                             <ul class="list-unstyled" style="padding-left: 0;">
-                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
-                                                    <button onclick="submitShadownRocket(1)">
+                                                <li style="border-bottom: 1px solid #757070; padding: 6px 0;" onclick="submitShadownRocket(1)">
+                                                
                                                         <div class="d-flex align-items-center">
                                                             <div class="text-center" style="width: 30%;">
                                                                 <img class="mr-2" src="{{ asset('assets/images/app/copy.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
                                                             </div>
                                                             <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Lấy liên kết server</p>
                                                         </div>
-                                                    </button>
+                                                    
                                                 </li>
                                                 <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
