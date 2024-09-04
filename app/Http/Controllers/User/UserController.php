@@ -42,12 +42,12 @@ class UserController extends Controller
         
         // Nối token vào URL
         $domain = $domain . $token;
-        $domain = $domain . "#MANGVIP.COM";
         // Mã hóa URL bằng base64
         $code = base64_encode($domain);
         
         // Nối phần mã hóa vào link
         $link = $link . $code;
+        $link = $link . "#MANGVIP.COM";
        
         // Chuyển hướng người dùng đến liên kết
         return redirect()->away($link);
