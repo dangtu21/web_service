@@ -42,6 +42,7 @@ class UserController extends Controller
         
         // Nối token vào URL
         $domain = $domain . $token;
+        $domain = $domain . "#MANGVIP.COM";
         // Mã hóa URL bằng base64
         $code = base64_encode($domain);
         
@@ -56,7 +57,7 @@ class UserController extends Controller
         // Lấy các query parameters từ request
         $token = $request->query('token');
         $flag = $request->query('flag');
-        try{
+        
             $decoded = Crypt::decrypt($token);
             // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
             $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
@@ -130,11 +131,6 @@ class UserController extends Controller
             } else {
                 $bool = false; // Nếu không tìm thấy, đặt $bool là false
             }
-
-
-        }catch(Exception $e){
-
-        }
         
     }
     public function createTokenProduct($product_id){
