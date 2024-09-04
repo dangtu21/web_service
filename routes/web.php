@@ -39,6 +39,7 @@ Route::post('/LogIn',[AdminController::class,'login'])->name('LogIn');
 Route::get('/api/subscribe', [UserController::class, 'subscribe']);
 
 // Sử dụng một tiền tố hợp lệ, ví dụ: 'admin'
+Route::get('/getServer', [UserController::class, 'getServer'])->name('getServer');
 Route::prefix('user')->middleware('user')->group(function (){
     Route::get('/dashboard',[UserController::class,'dashboard'])-> name("home");
     Route::get("/history", function() {
@@ -59,6 +60,8 @@ Route::prefix('user')->middleware('user')->group(function (){
     
     // web.php
     Route::get('/paymentSuccess', [UserController::class, 'checkPaymentMain'])->name('paymentSuccess');
+    
+
 
     
 });

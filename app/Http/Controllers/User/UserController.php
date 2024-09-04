@@ -140,8 +140,7 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlw
         $data = [
             'sub' => Auth::user()->id,
             'product_id'=>$product_id,
-            'random'=>rand().time(),
-            'exp' => time() + config('jwt.refresh_ttl')
+            'random'=>rand().time()
         ];
         $token=Crypt::encrypt($data);
         return $token;
