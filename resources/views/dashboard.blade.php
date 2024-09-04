@@ -321,7 +321,7 @@
                                         }
                                         function submitShadownRocket(id) {
 
-                                                
+                                                alert("hello x");
                                                 // Gửi request GET đến route /subscribe
                                                 $.ajax({
                                                     url: '/subscribe',
