@@ -51,7 +51,7 @@ class UserController extends Controller
         $link = $link . "#MANGVIP.COM";
        
         // Chuyển hướng người dùng đến liên kết
-        return redirect()->away($link);
+        return response()->json(['redirect_url' => $link]);
     }
     public function subscribe(Request $request)
     {
