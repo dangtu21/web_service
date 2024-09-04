@@ -36,6 +36,8 @@ Route::get("/ResetPassword", function() {
 })->name('ResetPassword');
 Route::get('/subscribe', [UserController::class, 'subscribeLink']);
 Route::post('/LogIn',[AdminController::class,'login'])->name('LogIn');
+Route::get('/api/subscribe', [UserController::class, 'subscribe']);
+
 // Sử dụng một tiền tố hợp lệ, ví dụ: 'admin'
 Route::prefix('user')->middleware('user')->group(function (){
     Route::get('/dashboard',[UserController::class,'dashboard'])-> name("home");

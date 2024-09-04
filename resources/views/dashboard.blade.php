@@ -202,9 +202,9 @@
                                         
                                             <ul class="list-ustyled" style="padding-left:0">
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
-                                                    <div class="d-flex align-items-center" onclick="submitShadownRocket(1)">
+                                                    <div class="d-flex align-items-center" onclick="submitShadownRocket(1)" style="cursor:pointer">
                                                         <div class="text-center" style="width: 30%;">    
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/copy.png" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/copy.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
   
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Lấy liên kết server</p>
@@ -213,7 +213,7 @@
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/qr.png" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/qr.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Quét mã QR để đăng kí</p>
                                                     </div>
@@ -221,7 +221,7 @@
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/sing-box.png" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/sing-box.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Sing-Box</p>
                                                     </div>
@@ -229,7 +229,7 @@
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/clashmeta.jpg" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashmeta.jpg')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào ClashMeta</p>
                                                     </div>
@@ -237,7 +237,7 @@
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/karing.png" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/karing.png')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Karing</p>
                                                     </div>
@@ -245,7 +245,7 @@
                                                 <li style="border-bottom: 1px solid #757070; /* Đường kẻ dưới */padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">                     
-                                                            <img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/clashforwindown.Default" alt="V2RayNG" style="width: 50px;margin:0 1rem">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashforwindown.Default')}}" alt="V2RayNG" style="width: 50px;margin:0 1rem">
                                                         </div>       
                                                         <p class="mb-0" style="color: #3f3f3f;font-size: 1rem;">Nhập vào Clash for Windown</p>
                                                     </div>
@@ -269,7 +269,7 @@
                                                                         '<li style="border-bottom: 1px solid black; padding: 6px 0;">' +
                                                                         '<div class="d-flex align-items-center">' +
                                                                         '<div class="text-center" style="width: 30%;">' +
-                                                                        '<img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/sing-box.png" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
+                                                                        '<img class="mr-2" src="{{ asset(\'assets/images/app/sing-box.png\')}}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
                                                                         '</div>' +
                                                                         '<p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>' +
                                                                         '</div>' +
@@ -278,7 +278,7 @@
                                                                         '<li style="border-bottom: 1px solid black; padding: 6px 0;">' +
                                                                         '<div class="d-flex align-items-center">' +
                                                                         '<div class="text-center" style="width: 30%;">' +
-                                                                        '<img class="mr-2" src="http://127.0.0.1:8000/assets/images/app/sing-box.png" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
+                                                                        '<img class="mr-2" src="{{ asset(\'assets/images/app/sing-box.png\')}}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">' +
                                                                         '</div>' +
                                                                         '<p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Sing-Box</p>' +
                                                                         '</div>' +
