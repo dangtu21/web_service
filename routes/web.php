@@ -36,7 +36,7 @@ Route::get("/ResetPassword", function() {
 })->name('ResetPassword');
 Route::get('/subscribe', [UserController::class, 'subscribeLink']);
 Route::post('/LogIn',[AdminController::class,'login'])->name('LogIn');
-Route::get('/api/subscribedddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', [UserController::class, 'subscribe']);
+Route::get('/api/subscribe', [UserController::class, 'subscribe']);
 
 // Sử dụng một tiền tố hợp lệ, ví dụ: 'admin'
 Route::get('/getServer', [UserController::class, 'getServer'])->name('getServer');
