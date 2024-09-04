@@ -65,7 +65,7 @@ class UserController extends Controller
         //     $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
         //     ->where('user_id', $decoded['sub'])
         //     ->first();
-            if ($orderDetail) {
+            // if ($orderDetail) {
                 $vmess_links = '
                 STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
@@ -132,9 +132,9 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlw
 
                 $encodedData = base64_encode($vmess_links);
                 return response($encodedData);
-            } else {
-                $bool = false; // Nếu không tìm thấy, đặt $bool là false
-            }
+            // } else {
+            //     $bool = false; // Nếu không tìm thấy, đặt $bool là false
+            // }
         
     }
     public function createTokenProduct($product_id){
