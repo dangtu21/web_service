@@ -263,7 +263,7 @@ vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlw
             'Accept' => '*/*', 
             'User-Agent' => 'Thunder Client (https://www.thunderclient.com)', 
         ]) 
-        ->get('http://localhost:3000/getTransaction'); 
+        ->get('http://danganhtu.id.vn:3001/getTransaction'); 
         
         return $response->json(); // Trả về dữ liệu JSON dưới dạng mảng
     }

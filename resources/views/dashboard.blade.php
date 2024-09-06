@@ -66,7 +66,7 @@
                                         <p>No products found.</p>
                                     @else
                                         @foreach($orderDetailsWithProducts as $product)
-                                            <div class="col-md-6 p-0">
+                                            <div class="col-md-6 p-0 p-lg-4 pb-lg-0">
                                                 <div class="card mb-5" style="border-radius:20px">
                                                     <div class="card-header bg-light py-3" style="border-radius:20px">
                                                         <h5 class="card-title text-white text-uppercase text-center">{{$product->title }}</h5>
@@ -166,7 +166,7 @@
                                             </div>
                                         @endforeach
                                     @endif
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 p-0 p-lg-4 pb-lg-0">
                                             <table class="table " style="font-size: 1rem ; border-radius:20px; overflow: hidden;"">
                                                 <thead>
                                                     <tr>
@@ -255,7 +255,7 @@
                                                 <li style="border-bottom: 1px solid #757070; padding: 6px 0;">
                                                     <div class="d-flex align-items-center">
                                                         <div class="text-center" style="width: 30%;">
-                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashforwindows.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
+                                                            <img class="mr-2" src="{{ asset('assets/images/app/clashforandroi.png') }}" alt="V2RayNG" style="width: 50px; margin: 0 1rem;">
                                                         </div>
                                                         <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào Clash for Windows</p>
                                                     </div>

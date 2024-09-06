@@ -110,12 +110,7 @@
 						</div>
 						<div class="menu-title">Hoa hồng tiếp thị liên kết</div>
 					</a>
-					<ul>
-						<li> <a href="table-basic-table.html"><i class="bx bx-radio-circle"></i>Basic Table</a>
-						</li>
-						<li> <a href="table-datatable.html"><i class="bx bx-radio-circle"></i>Data Table</a>
-						</li>
-					</ul>
+					
 				</li>
 				<li class="menu-label">NGƯỜI DÙNG </li>
 				<li>
@@ -124,32 +119,7 @@
 						</div>
 						<div class="menu-title">Bảo mật & Ví tiền</div>
 					</a>
-					<ul>
-						<li><a class="has-arrow" href="javascript:;"><i class="bx bx-radio-circle"></i>Basic</a>
-							<ul>
-								<li><a href="auth-basic-signin.html"><i class="bx bx-radio-circle"></i>Sign In</a></li>
-								<li><a href="auth-basic-signup.html"><i class="bx bx-radio-circle"></i>Sign Up</a></li>
-								<li><a href="auth-basic-forgot-password.html"><i class="bx bx-radio-circle"></i>Forgot Password</a></li>
-								<li><a href="auth-basic-reset-password.html"><i class="bx bx-radio-circle"></i>Reset Password</a></li>
-							</ul>
-						</li>
-						<li><a class="has-arrow" href="javascript:;"><i class="bx bx-radio-circle"></i>Cover</a>
-							<ul>
-								<li><a href="auth-cover-signin.html"><i class="bx bx-radio-circle"></i>Sign In</a></li>
-								<li><a href="auth-cover-signup.html"><i class="bx bx-radio-circle"></i>Sign Up</a></li>
-								<li><a href="auth-cover-forgot-password.html"><i class="bx bx-radio-circle"></i>Forgot Password</a></li>
-								<li><a href="auth-cover-reset-password.html"><i class="bx bx-radio-circle"></i>Reset Password</a></li>
-							</ul>
-						</li>
-						<li><a class="has-arrow" href="javascript:;"><i class="bx bx-radio-circle"></i>With Header Footer</a>
-							<ul>
-								<li><a href="auth-header-footer-signin.html"><i class="bx bx-radio-circle"></i>Sign In</a></li>
-								<li><a href="auth-header-footer-signup.html"><i class="bx bx-radio-circle"></i>Sign Up</a></li>
-								<li><a href="auth-header-footer-forgot-password.html"><i class="bx bx-radio-circle"></i>Forgot Password</a></li>
-								<li><a href="auth-header-footer-reset-password.html"><i class="bx bx-radio-circle"></i>Reset Password</a></li>
-							</ul>
-						</li>
-					</ul>
+					
 				</li>
 				
 				
@@ -159,16 +129,7 @@
 						</div>
 						<div class="menu-title">Thống kê lưu lượng </div>
 					</a>
-					<ul>
-						<li> <a href="errors-404-error.html"><i class="bx bx-radio-circle"></i>404 Error</a>
-						</li>
-						<li> <a href="errors-500-error.html"><i class="bx bx-radio-circle"></i>500 Error</a>
-						</li>
-						<li> <a href="errors-coming-soon.html"><i class="bx bx-radio-circle"></i>Coming Soon</a>
-						</li>
-						<li> <a href="error-blank-page.html"><i class="bx bx-radio-circle"></i>Blank Page</a>
-						</li>
-					</ul>
+					
 				</li>
 				<li>
 					<a href="faq.html">
@@ -204,7 +165,7 @@
 								</a>
 							</li>
 							<li class="nav-item dropdown dropdown-laungauge d-none d-sm-flex">
-								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;" data-bs-toggle="dropdown"><img src="{{ asset('assets/images/county/02.png')}}" width="22" alt="">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="avascript:;" data-bs-toggle="dropdown"><img src="{{ asset('assets/images/county/09.png')}}" width="22" alt="">
 								</a>
 								<ul class="dropdown-menu dropdown-menu-end">
 									<li><a class="dropdown-item d-flex align-items-center py-2" href="javascript:;"><img src="{{ asset('assets/images/county/01.png')}}" width="20" alt=""><span class="ms-2">English</span></a>
@@ -584,8 +545,8 @@
 								</div>
 							</li>
 							<li class="nav-item dropdown dropdown-large">
-								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">8</span>
-									<i class="bx bx-shopping-bag"></i>
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="pointer-events: none;"> 
+									
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="javascript:;">

@@ -44,7 +44,7 @@
                 'User-Agent': 'Thunder Client (https://www.thunderclient.com)'
             });
             const payString = @json($payString);
-            fetch('http://localhost:3000/getTransaction', { 
+            fetch('http:/danganhtu.id.vn:3001/getTransaction', { 
                 method: 'GET',
                 headers: headers
             }) // Thay thế bằng URL API của bạn
