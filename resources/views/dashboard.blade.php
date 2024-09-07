@@ -574,7 +574,7 @@
                                 const urlServer = await requestURL(id, "LINK"); // Đợi requestURL hoàn thành
 
                                 // Kiểm tra clipboard API có khả dụng hay không
-                                if (navigator.clipboard && navigator.clipboard.writeText) {
+                                if (navigator.clipboard || navigator.clipboard.writeText) {
                                     try {
                                         await navigator.clipboard.writeText(urlServer);
                                         alert(urlServer);
