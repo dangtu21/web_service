@@ -700,7 +700,7 @@
                             try {
                                 const link = await requestURL(id, nameApp); // Đợi requestURL hoàn thành
                                 if (link) {
-                                    alert(link);
+                                    
                                     // Chuyển hướng đến urlServer
                                     window.location.assign(link); // Thay thế trang hiện tại và giữ lịch sử
 
