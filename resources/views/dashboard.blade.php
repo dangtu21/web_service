@@ -668,6 +668,15 @@
                                 }
                             });
                         }
+                        function openLinkInNewTab(link) {
+                            const a = document.createElement('a');
+                            a.href = link;
+                            a.target = '_blank';
+                            a.rel = 'noopener noreferrer';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                        }
                         async function submitApp(id,nameApp) {
                             
                                 try {
@@ -675,7 +684,7 @@
                                     if (link) {
                                         alert(link);
                                         // Chuyển hướng đến urlServer
-                                        window.open(link, '_blank');
+                                        openLinkInNewTab(link);
                                     } else {
                                         console.error('Không có URL để chuyển hướng');
                                     }
