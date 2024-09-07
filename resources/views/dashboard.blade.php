@@ -571,40 +571,58 @@
                         }
                         async function submitShadownRocket(id) {
                             try {
-                                const urlServer = await requestURL(id, "LINK"); // Đợi requestURL hoàn thành
+                                const urlServer = await requestURL(id, "LINK");
+                                if (!urlServer) {
+                                    throw new Error("URL không hợp lệ");
+                                }
 
-                                // Kiểm tra clipboard API có khả dụng hay không
-                                if (navigator.clipboard || navigator.clipboard.writeText) {
+                                if (navigator.clipboard && navigator.clipboard.writeText) {
                                     try {
+                                        // Yêu cầu quyền truy cập clipboard (có thể cần trong Safari)
+                                        await navigator.permissions.query({name: "clipboard-write"});
                                         await navigator.clipboard.writeText(urlServer);
-                                        alert(urlServer);
-                                        showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+                                        console.log("URL đã được copy vào clipboard:", urlServer);
+                                        showNotification();
                                     } catch (err) {
-                                        console.error("Không thể sao chép văn bản bằng clipboard API: ", err);
-                                        fallbackCopy(urlServer); // Sử dụng phương pháp dự phòng nếu clipboard API không hoạt động
+                                        console.warn("Không thể sử dụng Clipboard API:", err);
+                                        fallbackCopy(urlServer);
                                     }
                                 } else {
-                                    alert("fallbackCopy");
-                                    fallbackCopy(urlServer); // Sử dụng phương pháp dự phòng nếu clipboard API không có sẵn
+                                    console.warn("Clipboard API không khả dụng");
+                                    fallbackCopy(urlServer);
                                 }
                             } catch (error) {
-                                console.error("Lỗi khi gọi requestURL:", error);
+                                console.error("Lỗi:", error);
+                                alert("Có lỗi xảy ra: " + error.message);
                             }
                         }
 
                         function fallbackCopy(text) {
-                            var tempInput = document.createElement("textarea");
+                            const tempInput = document.createElement("textarea");
+                            tempInput.style.position = 'fixed';
+                            tempInput.style.opacity = 0;
                             tempInput.value = text;
                             document.body.appendChild(tempInput);
+                            
+                            tempInput.focus();
                             tempInput.select();
+
+                            let successful = false;
                             try {
-                                document.execCommand("copy");
-                                showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+                                successful = document.execCommand('copy');
                             } catch (err) {
-                                console.error("Không thể sao chép văn bản bằng execCommand: ", err);
-                                alert("Sao chép thủ công liên kết này: " + text);
+                                console.error("execCommand error:", err);
                             }
-                            document.body.removeChild(tempInput); // Xóa trường tạm thời
+
+                            document.body.removeChild(tempInput);
+
+                            if (successful) {
+                                console.log("Fallback: Copied the text: " + text);
+                                showNotification();
+                            } else {
+                                console.error("Fallback: Không thể copy text");
+                                alert("Không thể tự động copy. Vui lòng copy liên kết này thủ công: " + text);
+                            }
                         }
                         async function submitQR(id) {
                            
