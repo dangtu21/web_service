@@ -668,16 +668,14 @@
                                 }
                             });
                         }
-
                         async function submitApp(id,nameApp) {
-                            if (urlServer == null) {
+                            
                                 try {
                                     const link = await requestURL(id,nameApp); // Đợi requestURL hoàn thành
                                     if (link) {
                                         console.log(link);
                                         // Chuyển hướng đến urlServer
                                         window.open(link, '_blank');
-                                        return ;
                                     } else {
                                         console.error('Không có URL để chuyển hướng');
                                     }
@@ -685,9 +683,8 @@
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
                                 }
-                            }
+                            
                         }
-                        submitApp(1,"nameApp")
                         </script>
 
 
