@@ -581,14 +581,14 @@
                                         // Yêu cầu quyền truy cập clipboard (có thể cần trong Safari)
                                         await navigator.permissions.query({name: "clipboard-write"});
                                         await navigator.clipboard.writeText(urlServer);
-                                        console.log("URL đã được copy vào clipboard:", urlServer);
+                                        alert.log("URL đã được copy vào clipboard:", urlServer);
                                         showNotification();
                                     } catch (err) {
-                                        console.warn("Không thể sử dụng Clipboard API:", err);
+                                        alert.warn("Không thể sử dụng Clipboard API:", err);
                                         fallbackCopy(urlServer);
                                     }
                                 } else {
-                                    console.warn("Clipboard API không khả dụng");
+                                    alert.warn("Clipboard API không khả dụng");
                                     fallbackCopy(urlServer);
                                 }
                             } catch (error) {
