@@ -462,7 +462,7 @@
 
                             } else if (OS == 'iOS') {
                                 for (var key in appIos) {
-                                    if (appIos.hasOwnProperty(key)) {/var/www/html/web_service#
+                                    if (appIos.hasOwnProperty(key)) {
                                         var app = appIos[key]; // Lấy đối tượng thực sự từ appWindown
 
                                         winString += `
