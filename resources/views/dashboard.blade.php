@@ -491,6 +491,7 @@
 
                         <script>
                         let urlServer = null;
+                        let link = null;
 
                         function submit() {
                             var OS = getOS();
@@ -517,6 +518,7 @@
                                     },
                                     success: function(response) {
                                         urlServer = response.redirect_url;
+                                        link= response.link;
                                         resolve(); // Kết thúc Promise khi dữ liệu đã được tải
                                     },
                                     error: function(xhr) {
@@ -537,7 +539,7 @@
                             }
                             // Kiểm tra clipboard API có khả dụng hay không
                             if (navigator.clipboard && navigator.clipboard.writeText) {
-                                navigator.clipboard.writeText(urlServer).then(function() {
+                                navigator.clipboard.writeText(link).then(function() {
                                     showNotification(); // Hiển thị thông báo sau khi sao chép thành công
                                 }).catch(function(err) {
                                     console.error("Không thể sao chép văn bản: ", err);
@@ -545,7 +547,7 @@
                             } else {
                                 // Sử dụng phương pháp execCommand('copy') nếu clipboard API không có sẵn
                                 var tempInput = document.createElement("textarea");
-                                tempInput.value = urlServer;
+                                tempInput.value = link;
                                 document.body.appendChild(tempInput);
                                 tempInput.select();
                                 try {
@@ -553,7 +555,7 @@
                                     showNotification(); // Hiển thị thông báo sau khi sao chép thành công
                                 } catch (err) {
                                     console.error("Không thể sao chép văn bản: ", err);
-                                    alert("Sao chép thủ công liên kết này: " + urlServer);
+                                    alert("Sao chép thủ công liên kết này: " + link);
                                 }
                                 document.body.removeChild(tempInput); // Xóa trường tạm thời
                             }
