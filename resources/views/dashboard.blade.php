@@ -407,7 +407,7 @@
                                 image: "{{ asset('assets/images/app/clashforandroi.png') }}"
                             }
                         };
-                        
+
 
                         function listAppOpen(id) {
 
@@ -528,12 +528,13 @@
                             document.getElementById('menu2111').style.display = 'none';
                             document.getElementById('overlayx').style.display = 'none'; // Ẩn menu
                         }
-                        
-                        
+
+
                         let link = null;
                         var OS = getOS();
+
                         function submit() {
-                            
+
                             if (OS == 'Windows') {
 
                             } else if (OS == 'iOS') {
@@ -553,14 +554,15 @@
                                         'Accept': 'application/json'
                                     },
                                     data: {
-                                        product_id: id ,
-                                        app: nameApp,// Sử dụng ID sản phẩm từ thuộc tính dữ liệu của nút
-                                        OS : getOS() 
+                                        product_id: id,
+                                        app: nameApp, // Sử dụng ID sản phẩm từ thuộc tính dữ liệu của nút
+                                        OS: getOS()
                                     },
                                     success: function(response) {
                                         urlServer = response.redirect_url;
-                                        resolve(urlServer); // Kết thúc Promise khi dữ liệu đã được tải
-                                       
+                                        resolve(
+                                            urlServer); // Kết thúc Promise khi dữ liệu đã được tải
+
                                     },
                                     error: function(xhr) {
                                         console.error('Có lỗi xảy ra:', xhr.responseText);
@@ -579,7 +581,9 @@
                                 if (navigator.clipboard && navigator.clipboard.writeText) {
                                     try {
                                         // Yêu cầu quyền truy cập clipboard (có thể cần trong Safari)
-                                        await navigator.permissions.query({name: "clipboard-write"});
+                                        await navigator.permissions.query({
+                                            name: "clipboard-write"
+                                        });
                                         await navigator.clipboard.writeText(urlServer);
                                         console.log("URL đã được copy vào clipboard:", urlServer);
                                         showNotification();
@@ -603,7 +607,7 @@
                             tempInput.style.opacity = 0;
                             tempInput.value = text;
                             document.body.appendChild(tempInput);
-                            
+
                             tempInput.focus();
                             tempInput.select();
 
@@ -625,14 +629,14 @@
                             }
                         }
                         async function submitQR(id) {
-                           
-                                try {
-                                   const urlServer = await requestURL(id,"QR"); // Đợi requestURL hoàn thành
-                                } catch (error) {
-                                    console.error("Lỗi khi gọi requestURL:", error);
-                                    return; // Nếu có lỗi, không tiếp tục
-                                }
-                            
+
+                            try {
+                                const urlServer = await requestURL(id, "QR"); // Đợi requestURL hoàn thành
+                            } catch (error) {
+                                console.error("Lỗi khi gọi requestURL:", error);
+                                return; // Nếu có lỗi, không tiếp tục
+                            }
+
 
                             console.log(urlServer);
                             generateQRCode(urlServer);
@@ -690,26 +694,26 @@
                                 }
                             });
                         }
-                        
-                        async function submitApp(id,nameApp) {
-                            
-                                try {
-                                    const link = await requestURL(id,nameApp); // Đợi requestURL hoàn thành
-                                    if (link) {
-                                        alert(link);
-                                        // Chuyển hướng đến urlServer
-                                        window.location.assign(link); // Thay thế trang hiện tại và giữ lịch sử
 
-                                    } else {
-                                        console.error('Không có URL để chuyển hướng');
-                                    }
-                                } catch (error) {
-                                    alert("lỗi");
+                        async function submitApp(id, nameApp) {
 
-                                    console.error("Lỗi khi gọi requestURL:", error);
-                                    return; // Nếu có lỗi, không tiếp tục
+                            try {
+                                const link = await requestURL(id, nameApp); // Đợi requestURL hoàn thành
+                                if (link) {
+                                    alert(link);
+                                    // Chuyển hướng đến urlServer
+                                    window.location.assign(link); // Thay thế trang hiện tại và giữ lịch sử
+
+                                } else {
+                                    console.error('Không có URL để chuyển hướng');
                                 }
-                            
+                            } catch (error) {
+                                alert("lỗi");
+
+                                console.error("Lỗi khi gọi requestURL:", error);
+                                return; // Nếu có lỗi, không tiếp tục
+                            }
+
                         }
                         </script>
 

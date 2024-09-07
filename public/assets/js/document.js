@@ -102,7 +102,7 @@ const contentArray = [{
                 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox</strong></p>
                 <ul>
                 <li>thao tác như ảnh bên dưới để đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718132947644_3ZQL5ubclF.png" style="width:80%"  alt=""></li>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718132947644_3ZQL5ubclF.png" style="width:100%"  alt=""></li>
                 </ul>
                 <p>----- <strong>Bước 4 : Đăng ký nền Viettel</strong><br>
                 👉 <strong>Tùy theo nhu cầu sử dụng của các bạn thì các bạn đăng ký gói nền cho phù hợp dưới đây nhé:</strong></p>
@@ -138,9 +138,9 @@ const contentArray = [{
                 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app  V2rayNG và cài đặt app V2rayNG</strong></p>
                 <ul>
                 <li>thao tác như ảnh bên dưới để đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app  V2rayNG (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718133280019_FTERfhc53v.png" style="width:80%" alt=""></li>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718133280019_FTERfhc53v.png" style="width:1O0%" alt=""></li>
                 <li>thao tác như ảnh bên dưới để cài đặt app V2rayNG (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718133373494_gawtQIwvtA.jpg" alt=""></li>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718133373494_gawtQIwvtA.jpg" alt="" style="width:100%"></li>
                 </ul>
                 <p>----- <strong>Bước 4 : Đăng ký nền Viettel</strong><br>
                 👉 <strong>Tùy theo nhu cầu sử dụng của các bạn thì các bạn đăng ký gói nền cho phù hợp dưới đây nhé:</strong></p>
@@ -217,7 +217,7 @@ Shadowrocket là phần mềm mất phí, mình đã mua nó trên tài khoản 
         <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox</strong></p>
         <ul>
         <li>thao tác như ảnh bên dưới để đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-        <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718132947644_3ZQL5ubclF.png" alt=""></li>
+        <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718132947644_3ZQL5ubclF.png" alt="" style="width:100%"></li>
         </ul>
         <p>----- <strong>Bước 4 : Đăng ký nền Viettel</strong><br>
         👉 <strong>Tùy theo nhu cầu sử dụng của các bạn thì các bạn đăng ký gói nền cho phù hợp dưới đây nhé:</strong></p>
