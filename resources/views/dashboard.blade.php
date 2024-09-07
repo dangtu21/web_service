@@ -342,7 +342,7 @@
                             SingBox: {
                                 name: "Sing-box",
                                 link: "",
-                                image: "{{asset('assets/images/app/karing.png')}}"
+                                image: "{{asset('assets/images/app/sing-box.png')}}"
                             },
                             Shadowrocket: {
                                 name: "Shadowrocket",
@@ -365,7 +365,7 @@
                             SingBox: {
                                 name: "Sing-box",
                                 link: "",
-                                image: "{{asset('assets/images/app/karing.png')}}"
+                                image: "{{asset('assets/images/app/sing-box.png')}}"
                             },
                             V2RayNG: {
                                 name: "V2RayNG",
@@ -462,7 +462,7 @@
 
                             } else if (OS == 'iOS') {
                                 for (var key in appIos) {
-                                    if (appIos.hasOwnProperty(key)) {
+                                    if (appIos.hasOwnProperty(key)) {/var/www/html/web_service#
                                         var app = appIos[key]; // Lấy đối tượng thực sự từ appWindown
 
                                         winString += `
