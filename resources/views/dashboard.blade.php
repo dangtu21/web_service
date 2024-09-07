@@ -570,37 +570,41 @@
                             });
                         }
                         async function submitShadownRocket(id) {
-                          
-                                try {
-                                   const urlServer= await requestURL(id,"LINK"); // Đợi requestURL hoàn thành
-                                } catch (error) {
-                                    console.error("Lỗi khi gọi requestURL:", error);
-                                    return; // Nếu có lỗi, không tiếp tục
-                                }
-                            
-                            // Kiểm tra clipboard API có khả dụng hay không
-                            if (navigator.clipboard && navigator.clipboard.writeText) {
-                                navigator.clipboard.writeText(urlServer).then(function() {
-                                    showNotification(); // Hiển thị thông báo sau khi sao chép thành công
-                                }).catch(function(err) {
-                                    console.error("Không thể sao chép văn bản: ", err);
-                                });
-                            } else {
-                                // Sử dụng phương pháp execCommand('copy') nếu clipboard API không có sẵn
-                                var tempInput = document.createElement("textarea");
-                                tempInput.value = urlServer;
-                                document.body.appendChild(tempInput);
-                                tempInput.select();
-                                try {
-                                    document.execCommand("copy");
-                                    showNotification(); // Hiển thị thông báo sau khi sao chép thành công
-                                } catch (err) {
-                                    console.error("Không thể sao chép văn bản: ", err);
-                                    alert("Sao chép thủ công liên kết này: " + urlServer);
-                                }
-                                document.body.removeChild(tempInput); // Xóa trường tạm thời
-                            }
+                            try {
+                                const urlServer = await requestURL(id, "LINK"); // Đợi requestURL hoàn thành
 
+                                // Kiểm tra clipboard API có khả dụng hay không
+                                if (navigator.clipboard && navigator.clipboard.writeText) {
+                                    try {
+                                        await navigator.clipboard.writeText(urlServer);
+                                        alert(urlServer);
+                                        showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+                                    } catch (err) {
+                                        console.error("Không thể sao chép văn bản bằng clipboard API: ", err);
+                                        fallbackCopy(urlServer); // Sử dụng phương pháp dự phòng nếu clipboard API không hoạt động
+                                    }
+                                } else {
+                                    alert("fallbackCopy");
+                                    fallbackCopy(urlServer); // Sử dụng phương pháp dự phòng nếu clipboard API không có sẵn
+                                }
+                            } catch (error) {
+                                console.error("Lỗi khi gọi requestURL:", error);
+                            }
+                        }
+
+                        function fallbackCopy(text) {
+                            var tempInput = document.createElement("textarea");
+                            tempInput.value = text;
+                            document.body.appendChild(tempInput);
+                            tempInput.select();
+                            try {
+                                document.execCommand("copy");
+                                showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+                            } catch (err) {
+                                console.error("Không thể sao chép văn bản bằng execCommand: ", err);
+                                alert("Sao chép thủ công liên kết này: " + text);
+                            }
+                            document.body.removeChild(tempInput); // Xóa trường tạm thời
                         }
                         async function submitQR(id) {
                            
