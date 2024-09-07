@@ -409,9 +409,7 @@
                         function listAppOpen(id) {
 
                             var OS = getOS();
-
-                            if (OS === 'Windows') {
-                                var winString = `<ul class="list-unstyled" style="padding-left: 0;">
+                            var winString = `<ul class="list-unstyled" style="padding-left: 0;">
                                     <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
                                         onclick="submitShadownRocket(1)">
 
@@ -437,6 +435,8 @@
                                         </div>
                                     </li>
                                 `;
+                            if (OS === 'Windows') {
+
 
                                 for (var key in appWindown) {
                                     if (appWindown.hasOwnProperty(key)) {
@@ -458,7 +458,53 @@
                                         `;
                                     }
                                 }
-                                winString += `
+
+
+                            } else if (OS == 'iOS') {
+                                for (var key in appIos) {
+                                    if (appIos.hasOwnProperty(key)) {
+                                        var app = appIos[key]; // Lấy đối tượng thực sự từ appWindown
+
+                                        winString += `
+                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
+                                            onclick="submitShadownRocket(1)">
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="text-center" style="width: 30%;">
+                                                    <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
+                                                </div>
+                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
+                                                </p>
+                                            </div>
+
+                                        </li>
+                                        `;
+                                    }
+                                }
+
+                            } else if (OS == 'Android') {
+                                for (var key in appAndroid) {
+                                    if (appAndroid.hasOwnProperty(key)) {
+                                        var app = appAndroid[key]; // Lấy đối tượng thực sự từ appWindown
+
+                                        winString += `
+                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
+                                            onclick="submitShadownRocket(1)">
+
+                                            <div class="d-flex align-items-center">
+                                                <div class="text-center" style="width: 30%;">
+                                                    <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
+                                                </div>
+                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
+                                                </p>
+                                            </div>
+
+                                        </li>
+                                        `;
+                                    }
+                                }
+                            }
+                            winString += `
                                         </ul>
                                         <div class="text-center">
                                             <button class="btn btn-secondary mt-3"  onclick="listAppClose()" id="closeMenu" >Đóng Menu</button>
@@ -472,13 +518,7 @@
                                         </div>`;
 
 
-                                document.getElementById('menu2111').innerHTML = winString;
-
-                            } else if (OS == 'iOS') {
-
-                            } else if (OS == 'Android') {
-
-                            }
+                            document.getElementById('menu2111').innerHTML = winString;
                             document.getElementById('overlayx').style.display = 'block';
                             document.getElementById('menu2111').style.display = 'block'; // Hiển thị menu
                         }
@@ -518,7 +558,7 @@
                                     },
                                     success: function(response) {
                                         urlServer = response.redirect_url;
-                                        link= response.link;
+                                        link = response.link;
                                         resolve(); // Kết thúc Promise khi dữ liệu đã được tải
                                     },
                                     error: function(xhr) {
