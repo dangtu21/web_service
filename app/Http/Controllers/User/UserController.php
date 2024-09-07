@@ -36,7 +36,7 @@ class UserController extends Controller
         // Tạo URL cơ bản
         $link = "sub://";
   
-        $domain = "http://13.213.30.33:8000/api/subscribe?token=";
+        $domain = "http://danganhtu.id.vn/api/subscribe?token=";
         
         // Tạo token cho sản phẩm
         $token = $this->createTokenProduct($request->product_id);
@@ -58,6 +58,72 @@ class UserController extends Controller
         // Lấy các query parameters từ request
         $token = $request->query('token');
         $flag = $request->query('flag');
+        $vmess_links = '
+                STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B2%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B325%20HBO-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B3%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B391%20ICO%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B4%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B323%20CNN-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDUubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B5%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3105%20BIG%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B6%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B387%20STA%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B7%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B395%20MXE%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyMS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B8%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B321%20HPP-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B9%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B333%20ZIK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B10%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B379%20MCP%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B11%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B367%20CMA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B12%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B369%20BGA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B13%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B389%20KCM%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B14%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B329%20LFM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDMubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B15%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3103%20MAC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B16%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B365%20TNG%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B17%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B357%20ACM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B18%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B351%20LLK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ni5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B19%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B396%20VJA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDAubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B20%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3100%20CFO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B21%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B319%20SAF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B22%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B347%20DEV%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B23%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B327%20MOK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDEubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B24%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3101%20GGC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B25%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B313%20GBO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B26%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B339%20BFM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B27%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B383%20DNO%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B28%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B355%20MIA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B29%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B353%20VBF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B30%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B381%20MOX%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B31%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B359%20HMI%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDIubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B32%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3102%20PIK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B33%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B337%20LGC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzMS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B34%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B331%20BBO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDQubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B35%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3104%20CBC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B36%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B327%20TIK-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B37%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B349%20PPA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B38%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B399%20KAI%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B39%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B385%20HBI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B40%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B341%20VOM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B41%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B335%20FBN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B42%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B371%20DBN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B43%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B343%20SUN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Mi5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B44%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B392%20PCL%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B45%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B345%20VIF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B46%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B325%20TCI-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B47%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B375%20BMI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B48%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B361%20NTA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDYubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B49%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3106%20SOM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5OC5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B50%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B398%20VIN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B51%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B377%20RRY%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B52%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B393%20HPK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5NC5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B53%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B394%20JES%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTUubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B54%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3115%20HNX%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTIubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B55%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3112%20HNO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTQubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B56%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3114%20HNA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTMubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B57%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3113%20HNK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTYubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B58%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3116%20HNP%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B59%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B363%20MIX%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B60%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B397%20LOF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
+                ';
+        $encodedData = base64_encode($vmess_links);
+        $shadownrocket=$encodedData;
+
     
         try{
             $decoded = JWTAuth::getJWTProvider()->decode($token);
@@ -65,72 +131,14 @@ class UserController extends Controller
             $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])
             ->where('user_id', $decoded['sub'])
             ->first();
-            if ($orderDetail) {
-                $vmess_links = '
-                STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B2%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B325%20HBO-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B3%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B391%20ICO%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B4%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B323%20CNN-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDUubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B5%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3105%20BIG%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B6%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B387%20STA%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B7%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B395%20MXE%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyMS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B8%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B321%20HPP-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B9%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B333%20ZIK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B10%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B379%20MCP%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B11%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B367%20CMA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B12%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B369%20BGA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B13%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B389%20KCM%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B14%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B329%20LFM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDMubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B15%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3103%20MAC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B16%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B365%20TNG%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B17%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B357%20ACM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B18%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B351%20LLK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ni5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B19%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B396%20VJA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDAubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B20%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3100%20CFO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B21%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B319%20SAF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B22%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B347%20DEV%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B23%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B327%20MOK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDEubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B24%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3101%20GGC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B25%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B313%20GBO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzOS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B26%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B339%20BFM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B27%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B383%20DNO%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B28%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B355%20MIA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B29%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B353%20VBF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B30%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B381%20MOX%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY1OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B31%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B359%20HMI%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDIubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B32%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3102%20PIK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B33%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B337%20LGC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzMS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B34%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B331%20BBO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDQubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B35%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3104%20CBC%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxNy5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B36%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B327%20TIK-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B37%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B349%20PPA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5OS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B38%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B399%20KAI%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY4NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B39%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B385%20HBI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B40%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B341%20VOM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYzNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B41%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B335%20FBN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B42%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B371%20DBN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B43%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B343%20SUN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Mi5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B44%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B392%20PCL%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY0NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B45%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B345%20VIF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B46%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B325%20TCI-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3NS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B47%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B375%20BMI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B48%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B361%20NTA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMDYubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B49%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3106%20SOM%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5OC5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B50%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B398%20VIN%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B51%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B377%20RRY%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B52%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B393%20HPK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5NC5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B53%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B394%20JES%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTUubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B54%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3115%20HNX%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTIubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B55%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3112%20HNO%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTQubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B56%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3114%20HNA%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTMubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B57%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3113%20HNK%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYxMTYubWFuZ3ZpcC5jb206ODA=?tfo=0&remark=%5B58%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B3116%20HNP%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY2My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B59%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B363%20MIX%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5Ny5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B60%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B397%20LOF%20-%20MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
-';
 
-                $encodedData = base64_encode($vmess_links);
+            if ($orderDetail) {
+                if($flag == 'shadownrocket'){
+                    return response($shadownrocket);
+                }else if($flag == 'clash'){
+
+                }
+                
                 return response($encodedData);
             } else {
                 $bool = false; // Nếu không tìm thấy, đặt $bool là false

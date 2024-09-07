@@ -173,6 +173,77 @@ a {
     transition: all .2s ease-out
 }
 
+#overlay001 {
+    display: none;
+    /* Mặc định ẩn */
+    position: fixed;
+    /* Cố định với màn hình */
+    top: -1px;
+    left: -1px;
+    width: 101%;
+    height: 101%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Nền mờ để làm overlay */
+    z-index: 1055;
+    /* Đảm bảo nằm dưới QR container */
+}
+
+#qr-container {
+    display: none;
+    /* Mặc định ẩn */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    /* Nền tối */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1056;
+    width: 100%
+}
+
+#qrcode {
+    display: block;
+    margin: auto;
+}
+
+#qrcode canvas {
+    max-width: 70% !important;
+    /* Đảm bảo canvas không vượt quá kích thước container */
+    height: auto !important;
+    /* Đặt chiều cao tự động để duy trì tỷ lệ */
+}
+
+#close-btn {
+    color: white;
+    background-color: #f44336;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#notification {
+    display: none;
+    position: fixed;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    z-index: 1055;
+    width: 350px;
+    /* Chiều rộng cố định */
+    border-radius: 5px;
+}
+
 .sidebar-header {
     width: 250px;
     height: 60px;
