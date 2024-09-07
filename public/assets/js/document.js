@@ -7,21 +7,21 @@ const contentMap = {
                 🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/FRDErkEcZAU"><strong>TẠI ĐÂY</strong></a> 👈    <br>
                 <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
                 <p>🔴 <strong>4 BƯỚC</strong></p>
-                <p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong>
+                <p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong>
                 <br></p>
                 <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br>
                 • Nếu đã mua gói rồi thì bỏ qua bước này nhé<br></p>
-                <p>----- <strong>Bước 2: Tải app Shadowrocket để chạy 4G MANGVIP</strong><br>
+                <p>----- <strong>Bước 2: Tải app Shadowrocket để chạy 4GFUTURE</strong><br>
                 Shadowrocket là phần mềm mất phí, mình đã mua nó trên tài khoản ID APPLE của mình. Các bạn <strong>nhập tài khoản và mật khẩu ID APPLE của mình vào APPSTORE</strong> để tải app về , <strong>không được nhập vào iCloud</strong></p>
                 <p>•  👉<a href="https://mangvip.com/idapple/"><strong>SAO CHÉP TÀI KHOẢN &amp; MẬT KHẨU ID APPLE TẠI ĐÂY</strong></a>👈  <br></p>
                 <p>• sau khi sao chép tài khoản và mật khẩu ID APPLE của mình. Các bạn làm theo hướng dẫn trong ảnh này để tải Shadowrocket về máy nhé. Sau khi tải xong thì bạn đăng xuất ID Apple của mình ra và đăng nhập lại ID Apple của bạn vào nhé.
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718127395347_Wvro1Fa8AQ.jpg" alt=""></p>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718127395347_Wvro1Fa8AQ.jpg"  alt="" style="width:100%"></p>
                 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Shadowrocket  &amp; cài đặt Shadowrocket</strong></p>
                 <ul>
                 <li>thao tác như ảnh bên dưới để đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Shadowrocket (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718129596559_ii3KnejCFI.jpg" alt=""></li>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718129596559_ii3KnejCFI.jpg" alt="" style="width:100%"></li>
                 <li>thao tác như ảnh bên dưới để cài đặt Shadowrocket nhé (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1707416309062_py8DWeBPgy.jpg" alt=""></li>
+                <img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1707416309062_py8DWeBPgy.jpg" alt=""style="width:100%"></li>
                 </ul>
                 <p>----- <strong>Bước 4 : Đăng ký nền Viettel</strong><br>
                 👉 <strong>Tùy theo nhu cầu sử dụng của các bạn thì các bạn đăng ký gói nền cho phù hợp dưới đây nhé:</strong></p>
@@ -48,15 +48,15 @@ const contentMap = {
 const contentArray = [{
 
         name: "androidNekobox",
-        title: "Hướng dẫn sử dụng 4G MANGVIP trên Android bằng app Nekobox",
+        title: "Hướng dẫn sử dụng 4GFUTURE trên Android bằng app Nekobox",
         content: `<div class="custom-html-style">
                     <p><strong>CÁCH SỬ DỤNG ĐƠN GIẢN THÔI NHÉ CÁC BẠN.</strong> <br>
                     🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/MRB4sonhkoc"><strong>TẠI ĐÂY</strong></a> 👈    <br>
                     <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
                     <p>🔴 <strong>4 BƯỚC</strong></p>
-                    <p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong><br></p>
+                    <p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong><br></p>
                     <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br></p>
-                    <p>----- <strong>Bước 2: Tải app Nekobox để chạy 4G MANGVIP</strong><br>
+                    <p>----- <strong>Bước 2: Tải app Nekobox để chạy 4GFUTURE</strong><br>
                     • 👉<a href="https://play.google.com/store/search?q=nekobox&amp;c=apps&amp;hl=vi_VN"><strong>NHẤN VÀO ĐÂY ĐỂ TẢI APP NEKOBOX</strong></a>  👈  <br>
                     lưu ý: hiện tại nhà phát triển đã đổi tên app Nekobox thành MIproxy, nên khi các bạn tải về thấy tên là MIproxy thì không vấn đề gì nhé</p>
                     <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Nekobox</strong></p>
@@ -88,16 +88,16 @@ const contentArray = [{
     },
     {
         name: "androidSing-box",
-        title: "Hướng dẫn sử dụng 4G MANGVIP trên Android bằng app Singbox",
+        title: "Hướng dẫn sử dụng 4GFUTURE trên Android bằng app Singbox",
         content: `<div class="custom-html-style"><p><strong>CÁCH SỬ DỤNG ĐƠN GIẢN THÔI NHÉ CÁC BẠN.</strong> <br>
                 🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/AD1sXGsBcKY"><strong>TẠI ĐÂY</strong></a> 👈    <br>
                 <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
                 <p>🔴 <strong>4 BƯỚC</strong></p>
-                <p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong>
+                <p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong>
                 <br></p>
                 <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br>
                 • Nếu đã mua gói rồi thì bỏ qua bước này nhé<br></p>
-                <p>----- <strong>Bước 2: Tải app Singbox để chạy 4G MANGVIP</strong><br>
+                <p>----- <strong>Bước 2: Tải app Singbox để chạy 4GFUTURE</strong><br>
                 • 👉<a href="https://play.google.com/store/search?q=singbox&amp;c=apps&amp;hl=vi_VN"><strong>NHẤN VÀO ĐÂY ĐỂ TẢI APP SINGBOX</strong></a>  👈  <br></p>
                 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox</strong></p>
                 <ul>
@@ -124,16 +124,16 @@ const contentArray = [{
     },
     {
         name: "androidV2RAY",
-        title: "Hướng dẫn sử dụng 4G MANGVIP trên Android bằng app V2rayNG",
+        title: "Hướng dẫn sử dụng 4GFUTURE trên Android bằng app V2rayNG",
         content: `<div class="custom-html-style"><p><strong>CÁCH SỬ DỤNG ĐƠN GIẢN THÔI NHÉ CÁC BẠN.</strong> <br>
                 🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/bH6bkgySnNo"><strong>TẠI ĐÂY</strong></a> 👈    <br>
                 <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
                 <p>🔴 <strong>4 BƯỚC</strong></p>
-                <p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong>
+                <p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong>
                 <br></p>
                 <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br>
                 • Nếu đã mua gói rồi thì bỏ qua bước này nhé<br></p>
-                <p>----- <strong>Bước 2: Tải app V2rayNG để chạy 4G MANGVIP</strong><br>
+                <p>----- <strong>Bước 2: Tải app V2rayNG để chạy 4GFUTURE</strong><br>
                 • 👉<a href="https://play.google.com/store/search?q=singbox&amp;c=apps&amp;hl=vi_VN"><strong>NHẤN VÀO ĐÂY ĐỂ TẢI APP  V2rayNG</strong></a>  👈  <br></p>
                 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app  V2rayNG và cài đặt app V2rayNG</strong></p>
                 <ul>
@@ -162,26 +162,26 @@ const contentArray = [{
     },
     {
         name: "IOSShadowroket",
-        title: "Hướng dẫn sử dụng 4G MANGVIP trên IOS bằng app Shadowrocket",
+        title: "Hướng dẫn sử dụng 4GFUTURE trên IOS bằng app Shadowrocket",
         content: `<div class="custom-html-style"><p><strong>CÁCH SỬ DỤNG ĐƠN GIẢN THÔI NHÉ CÁC BẠN.</strong> <br>
 🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/FRDErkEcZAU"><strong>TẠI ĐÂY</strong></a> 👈    <br>
 <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
 <p>🔴 <strong>4 BƯỚC</strong></p>
-<p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong>
+<p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong>
 <br></p>
 <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br>
 • Nếu đã mua gói rồi thì bỏ qua bước này nhé<br></p>
-<p>----- <strong>Bước 2: Tải app Shadowrocket để chạy 4G MANGVIP</strong><br>
+<p>----- <strong>Bước 2: Tải app Shadowrocket để chạy 4GFUTURE</strong><br>
 Shadowrocket là phần mềm mất phí, mình đã mua nó trên tài khoản ID APPLE của mình. Các bạn <strong>nhập tài khoản và mật khẩu ID APPLE của mình vào APPSTORE</strong> để tải app về , <strong>không được nhập vào iCloud</strong></p>
 <p>•  👉<a href="https://mangvip.com/idapple/"><strong>SAO CHÉP TÀI KHOẢN &amp; MẬT KHẨU ID APPLE TẠI ĐÂY</strong></a>👈  <br></p>
 <p>• sau khi sao chép tài khoản và mật khẩu ID APPLE của mình. Các bạn làm theo hướng dẫn trong ảnh này để tải Shadowrocket về máy nhé. Sau khi tải xong thì bạn đăng xuất ID Apple của mình ra và đăng nhập lại ID Apple của bạn vào nhé.
-<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718127395347_Wvro1Fa8AQ.jpg" alt=""></p>
+<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718127395347_Wvro1Fa8AQ.jpg" alt="" style="width:100%"></p>
 <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Shadowrocket  &amp; cài đặt Shadowrocket</strong></p>
 <ul>
 <li>thao tác như ảnh bên dưới để đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Shadowrocket (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718129596559_ii3KnejCFI.jpg" alt=""></li>
+<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1718129596559_ii3KnejCFI.jpg" alt="" style="width:100%"></li>
 <li>thao tác như ảnh bên dưới để cài đặt Shadowrocket nhé (các bạn có thể nhấn giữ vào ảnh để tải ảnh hướng dẫn xuống nếu không phóng to ảnh trên điện thoại lên được)<br>
-<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1707416309062_py8DWeBPgy.jpg" alt=""></li>
+<img src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1707416309062_py8DWeBPgy.jpg" alt=""style="width:100%"></li>
 </ul>
 <p>----- <strong>Bước 4 : Đăng ký nền Viettel</strong><br>
 👉 <strong>Tùy theo nhu cầu sử dụng của các bạn thì các bạn đăng ký gói nền cho phù hợp dưới đây nhé:</strong></p>
@@ -203,16 +203,16 @@ Shadowrocket là phần mềm mất phí, mình đã mua nó trên tài khoản 
     },
     {
         name: "IOSSingBox",
-        title: "Hướng dẫn sử dụng 4G MANGVIP trên IOS bằng app Singbox",
+        title: "Hướng dẫn sử dụng 4GFUTURE trên IOS bằng app Singbox",
         content: `<div class="custom-html-style"><p><strong>CÁCH SỬ DỤNG ĐƠN GIẢN THÔI NHÉ CÁC BẠN.</strong> <br>
         🔴 <strong>Đầu tiên các bạn xem video hướng dẫn chi tiết trên kênh Youtube MANGVIP:</strong> 👉<a href="https://youtu.be/AD1sXGsBcKY"><strong>TẠI ĐÂY</strong></a> 👈    <br>
         <strong>-&gt;&gt;sau khi xem video xong, các bạn làm theo video cùng với 4 bước bên dưới là dùng được nhé.</strong></p>
         <p>🔴 <strong>4 BƯỚC</strong></p>
-        <p>----- <strong>Bước 1: Mua gói data 4G mangvip trên trang web MANGVIP. COM</strong>
+        <p>----- <strong>Bước 1: Mua gói data 4GFUTURE trên trang web MANGVIP. COM</strong>
         <br></p>
         <p>• 👉<a href="https://mangvip.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a>  👈  <br>
         • Nếu đã mua gói rồi thì bỏ qua bước này nhé<br></p>
-        <p>----- <strong>Bước 2: Tải app Singbox để chạy 4G MANGVIP</strong><br>
+        <p>----- <strong>Bước 2: Tải app Singbox để chạy 4GFUTURE</strong><br>
         • 👉<a href="https://play.google.com/store/search?q=singbox&amp;c=apps&amp;hl=vi_VN"><strong>NHẤN VÀO ĐÂY ĐỂ TẢI APP SINGBOX</strong></a>  👈  <br></p>
         <p>-----<strong>Bước 3: Đồng bộ máy chủ của gói data mangvip mà các bạn đã mua vào app Singbox</strong></p>
         <ul>

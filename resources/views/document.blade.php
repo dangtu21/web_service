@@ -26,17 +26,17 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item bg-transparent" style="cursor: pointer;"
                         onclick="handleClick('androidNekobox')">
-                        <h5>Hướng dẫn sử dụng 4G 4GFUTURE trên Android bằng app Nekobox</h5>
+                        <h5>Hướng dẫn sử dụng 4G FUTURE trên Android bằng app Nekobox</h5>
                         <small>Cập Nhật Cuối: 30/08/2024</small>
                     </li>
                     <li class="list-group-item bg-transparent" style="cursor: pointer;"
                         onclick="handleClick('androidSing-box')">
-                        <h5>Hướng dẫn sử dụng 4G 4GFUTURE trên Android bằng app SignBox</h5>
+                        <h5>Hướng dẫn sử dụng 4G FUTURE trên Android bằng app SignBox</h5>
                         <small>Cập Nhật Cuối: 30/08/2024</small>
                     </li>
                     <li class="list-group-item bg-transparent" style="cursor: pointer;"
                         onclick="handleClick('androidV2RAY')">
-                        <h5>Hướng dẫn sử dụng 4G 4GFUTURE trên Android bằng app V2rayNG</h5>
+                        <h5>Hướng dẫn sử dụng 4G FUTURE trên Android bằng app V2rayNG</h5>
                         <small>Cập Nhật Cuối: 30/08/2024</small>
                     </li>
 
@@ -56,12 +56,12 @@
 
                     <li class="list-group-item bg-transparent" style="cursor: pointer;"
                         onclick="handleClick('IOSShadowroket')">
-                        <h5>Hướng dẫn sử dụng 4G 4GFUTURE trên IOS bằng app Shadowrocket</h5>
+                        <h5>Hướng dẫn sử dụng 4G FUTURE trên IOS bằng app Shadowrocket</h5>
                         <small>Cập Nhật Cuối: 30/08/2024</small>
                     </li>
                     <li class="list-group-item bg-transparent" style="cursor: pointer;"
                         onclick="handleClick('IOSSingBox')">
-                        <h5>Hướng dẫn sử dụng 4G 4GFUTURE trên IOS bằng app SignBox</h5>
+                        <h5>Hướng dẫn sử dụng 4G FUTURE trên IOS bằng app SignBox</h5>
                         <small>Cập Nhật Cuối: 30/08/2024</small>
                     </li>
 
@@ -181,10 +181,10 @@
                                 dùng được nhé.</strong>
                         </p>
                         <p>🔴 <strong>4 BƯỚC</strong></p>
-                        <p>----- <strong>Bước 1: Mua gói data 4G 4GFUTURE trên trang web 4GFUTURE. COM</strong><br></p>
+                        <p>----- <strong>Bước 1: Mua gói data 4G FUTURE trên trang web 4GFUTURE. COM</strong><br></p>
                         <p>• 👉<a href="https://4GFUTURE.com/#/plan"><strong>NHẤN VÀO ĐÂY ĐỂ MUA GÓI</strong></a> 👈<br>
                         </p>
-                        <p>----- <strong>Bước 2: Tải app Nekobox để chạy 4G 4GFUTURE</strong><br>
+                        <p>----- <strong>Bước 2: Tải app Nekobox để chạy 4G FUTURE</strong><br>
                             • 👉<a
                                 href="https://play.google.com/store/search?q=nekobox&amp;c=apps&amp;hl=vi_VN"><strong>NHẤN
                                     VÀO ĐÂY ĐỂ TẢI APP NEKOBOX</strong></a> 👈<br>
