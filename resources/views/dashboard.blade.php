@@ -462,6 +462,13 @@
                                         </ul>
                                         <div class="text-center">
                                             <button class="btn btn-secondary mt-3" id="closeMenu">Đóng Menu</button>
+                                        </div>
+                                        <div id="overlay001"></div>
+                                        <div id="qr-container">
+
+                                            <div id="qrcode" class="text-center"></div>
+                                            <p class="text-center" style="color:#000">Sử dụng ứng dụng hỗ trợ quét mã QR để đăng
+                                                ký</p>
                                         </div>`;
 
 
@@ -528,11 +535,28 @@
                                     return; // Nếu có lỗi, không tiếp tục
                                 }
                             }
-                            navigator.clipboard.writeText(urlServer).then(function() {
-                                showNotification();
-                            }).catch(function(err) {
-                                console.error("Không thể sao chép văn bản: ", err);
-                            });
+                            // Kiểm tra clipboard API có khả dụng hay không
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(urlServer).then(function() {
+            showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+        }).catch(function(err) {
+            console.error("Không thể sao chép văn bản: ", err);
+        });
+    } else {
+        // Sử dụng phương pháp execCommand('copy') nếu clipboard API không có sẵn
+        var tempInput = document.createElement("textarea");
+        tempInput.value = urlServer;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+            document.execCommand("copy");
+            showNotification(); // Hiển thị thông báo sau khi sao chép thành công
+        } catch (err) {
+            console.error("Không thể sao chép văn bản: ", err);
+            alert("Sao chép thủ công liên kết này: " + urlServer);
+        }
+        document.body.removeChild(tempInput); // Xóa trường tạm thời
+    }
 
                         }
                         async function submitQR(id) {
