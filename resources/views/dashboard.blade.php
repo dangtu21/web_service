@@ -668,6 +668,7 @@
                                 }
                             });
                         }
+
                         async function submitApp(id,nameApp) {
                             if (urlServer == null) {
                                 try {
@@ -676,6 +677,7 @@
                                         console.log(link);
                                         // Chuyển hướng đến urlServer
                                         window.open(link, '_blank');
+                                        return ;
                                     } else {
                                         console.error('Không có URL để chuyển hướng');
                                     }
@@ -685,6 +687,7 @@
                                 }
                             }
                         }
+                        submitApp(1,"nameApp")
                         </script>
 
 
