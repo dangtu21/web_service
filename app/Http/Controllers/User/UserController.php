@@ -50,7 +50,7 @@ class UserController extends Controller
             $domain = $domain . "&flag=";
             $domain = $domain . $request->app;
         }
-        dd($request->OS);
+       
         if($request->OS==="Windows"){
             if($request->app==="Shadowrocket"){
                 // Mã hóa URL bằng base64
