@@ -570,14 +570,14 @@
                             });
                         }
                         async function submitShadownRocket(id) {
-                            if (urlServer == null) {
+                          
                                 try {
-                                    await requestURL(id,"LINK"); // Đợi requestURL hoàn thành
+                                   const urlServer= await requestURL(id,"LINK"); // Đợi requestURL hoàn thành
                                 } catch (error) {
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
                                 }
-                            }
+                            
                             // Kiểm tra clipboard API có khả dụng hay không
                             if (navigator.clipboard && navigator.clipboard.writeText) {
                                 navigator.clipboard.writeText(link).then(function() {
@@ -603,14 +603,14 @@
 
                         }
                         async function submitQR(id) {
-                            if (urlServer == null) {
+                           
                                 try {
-                                    await requestURL(id,"QR"); // Đợi requestURL hoàn thành
+                                   const urlServer = await requestURL(id,"QR"); // Đợi requestURL hoàn thành
                                 } catch (error) {
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
                                 }
-                            }
+                            
 
                             console.log(urlServer);
                             generateQRCode(urlServer);
