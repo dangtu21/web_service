@@ -50,6 +50,7 @@ class UserController extends Controller
             $domain = $domain . "&flag=";
             $domain = $domain . $request->app;
         }
+        dd($request->OS);
         if($request->OS==="Windows"){
             if($request->app==="Shadowrocket"){
                 // Mã hóa URL bằng base64
@@ -169,7 +170,6 @@ class UserController extends Controller
                 }else if($flag == 'clash'){
                     return response($vmess_links);
                 }
-                
                 return response($vmess_links);
             } else {
                 $bool = false; // Nếu không tìm thấy, đặt $bool là false

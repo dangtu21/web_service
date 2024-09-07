@@ -674,7 +674,7 @@
                                     const link = await requestURL(id,nameApp); // Đợi requestURL hoàn thành
                                     if (link) {
                                         // Chuyển hướng đến urlServer
-                                        window.location.href = link;
+                                        window.open(link, '_blank');
                                     } else {
                                         console.error('Không có URL để chuyển hướng');
                                     }
