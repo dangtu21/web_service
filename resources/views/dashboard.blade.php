@@ -154,7 +154,7 @@
                                                 </div>
                                                 <div class="p-2">
                                                     <button class="btn btn-light w-100 radius-30"
-                                                        style="font-size: 12PX;">
+                                                        style="font-size: 12PX;" href="https://mangvip.com/idapple/">
                                                         <i class="lni lni-apple"></i> Lấy id Apple
                                                     </button>
                                                 </div>
@@ -338,25 +338,27 @@
 
                         </div>
                         <script>
+                        let urlServer = null;
+
                         var appIos = {
                             SingBox: {
                                 name: "Sing-box",
-                                link: "",
+                                link: urlServer,
                                 image: "{{asset('assets/images/app/sing-box.png')}}"
                             },
                             Shadowrocket: {
                                 name: "Shadowrocket",
-                                link: "",
+                                link: urlServer,
                                 image: "{{asset('assets/images/app/shadowrocket.jpg')}}"
                             },
                             Karing: {
                                 name: "Karing",
-                                link: "",
+                                link: urlServer,
                                 image: "{{asset('assets/images/app/karing.png')}}"
                             },
                             Stash: {
                                 name: "Stash",
-                                link: "",
+                                link: urlServer,
                                 image: "{{asset('assets/images/app/stash.jpg')}}"
                             }
                         };
@@ -405,6 +407,7 @@
                                 image: "{{ asset('assets/images/app/clashforandroi.png') }}"
                             }
                         };
+                        
 
                         function listAppOpen(id) {
 
@@ -444,7 +447,7 @@
 
                                         winString += `
                                         <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitShadownRocket(1)">
+                                            onclick="submitApp({{ $product->id }},'${key}')">
 
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
@@ -467,7 +470,7 @@
 
                                         winString += `
                                         <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitShadownRocket(1)">
+                                            onclick="submitApp({{ $product->id }},'${key}')">
 
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
@@ -488,9 +491,7 @@
                                         var app = appAndroid[key]; // Lấy đối tượng thực sự từ appWindown
 
                                         winString += `
-                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitShadownRocket(1)">
-
+                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer" onclick="submitApp({{ $product->id }},'${key}')">
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
                                                     <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
@@ -527,14 +528,12 @@
                             document.getElementById('menu2111').style.display = 'none';
                             document.getElementById('overlayx').style.display = 'none'; // Ẩn menu
                         }
-                        </script>
-
-                        <script>
-                        let urlServer = null;
+                        
+                        
                         let link = null;
-
+                        var OS = getOS();
                         function submit() {
-                            var OS = getOS();
+                            
                             if (OS == 'Windows') {
 
                             } else if (OS == 'iOS') {
@@ -544,7 +543,7 @@
                             }
                         }
 
-                        function requestURL(id) {
+                        function requestURL(id, nameApp) {
                             return new Promise((resolve, reject) => {
                                 $.ajax({
                                     url: '/subscribe',
@@ -554,12 +553,14 @@
                                         'Accept': 'application/json'
                                     },
                                     data: {
-                                        product_id: id // Sử dụng ID sản phẩm từ thuộc tính dữ liệu của nút
+                                        product_id: id ,
+                                        app: nameApp,// Sử dụng ID sản phẩm từ thuộc tính dữ liệu của nút
+                                        OS : getOS() 
                                     },
                                     success: function(response) {
                                         urlServer = response.redirect_url;
-                                        link = response.link;
-                                        resolve(); // Kết thúc Promise khi dữ liệu đã được tải
+                                        resolve(urlServer); // Kết thúc Promise khi dữ liệu đã được tải
+                                       
                                     },
                                     error: function(xhr) {
                                         console.error('Có lỗi xảy ra:', xhr.responseText);
@@ -571,7 +572,7 @@
                         async function submitShadownRocket(id) {
                             if (urlServer == null) {
                                 try {
-                                    await requestURL(id); // Đợi requestURL hoàn thành
+                                    await requestURL(id,"LINK"); // Đợi requestURL hoàn thành
                                 } catch (error) {
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
@@ -604,7 +605,7 @@
                         async function submitQR(id) {
                             if (urlServer == null) {
                                 try {
-                                    await requestURL(id); // Đợi requestURL hoàn thành
+                                    await requestURL(id,"QR"); // Đợi requestURL hoàn thành
                                 } catch (error) {
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
@@ -667,17 +668,21 @@
                                 }
                             });
                         }
-                        async function submitSingBox(id) {
+                        async function submitApp(id,nameApp) {
                             if (urlServer == null) {
                                 try {
-                                    await requestURL(id); // Đợi requestURL hoàn thành
+                                    const link = await requestURL(id,nameApp); // Đợi requestURL hoàn thành
+                                    if (link) {
+                                        // Chuyển hướng đến urlServer
+                                        window.location.href = link;
+                                    } else {
+                                        console.error('Không có URL để chuyển hướng');
+                                    }
                                 } catch (error) {
                                     console.error("Lỗi khi gọi requestURL:", error);
                                     return; // Nếu có lỗi, không tiếp tục
                                 }
                             }
-
-
                         }
                         </script>
 

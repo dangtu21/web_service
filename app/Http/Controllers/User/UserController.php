@@ -43,15 +43,46 @@ class UserController extends Controller
         
         // Nối token vào URL
         $domain = $domain . $token;
-        // Mã hóa URL bằng base64
-        $code = base64_encode($domain);
         
-        // Nối phần mã hóa vào link
-        $link = $link . $code;
-        $link = $link . "#danganhtu.id.vn";
-       
-        // Chuyển hướng người dùng đến liên kết
-        return response()->json(['redirect_url' => $link,'link'=>$domain]);
+        if($request->app==="LINK"||$request->app==="QR"){
+            return response()->json(['redirect_url' => $domain]);
+        }else{
+            $domain = $domain . "&flag=";
+            $domain = $domain . $request->app;
+        }
+        if($request->OS==="Windows"){
+            if($request->app==="Shadowrocket"){
+                // Mã hóa URL bằng base64
+                $code = base64_encode($domain);
+                
+                // Nối phần mã hóa vào link
+                $link = $link . $code;
+                $link = $link . "#danganhtu.id.vn";
+                return response()->json(['redirect_url' => $link]);
+            }else {
+                return response()->json(['redirect_url' => $domain]);
+
+            }
+        }else if($request->OS==="iOS"){
+            if($request->app==="Shadowrocket"){
+                // Mã hóa URL bằng base64
+                $code = base64_encode($domain);
+                
+                // Nối phần mã hóa vào link
+                $link = $link . $code;
+                $link = $link . "#danganhtu.id.vn";
+                return response()->json(['redirect_url' => $link]);
+            }else {
+                return response()->json(['redirect_url' => $domain]);
+
+            }
+        }else {
+            // android
+            return response()->json(['redirect_url' => $domain]);
+        }
+
+        
+        
     }
     public function subscribe(Request $request)
     {
@@ -136,10 +167,10 @@ class UserController extends Controller
                 if($flag == 'shadownrocket'){
                     return response($shadownrocket);
                 }else if($flag == 'clash'){
-
+                    return response($vmess_links);
                 }
                 
-                return response($encodedData);
+                return response($vmess_links);
             } else {
                 $bool = false; // Nếu không tìm thấy, đặt $bool là false
             }
