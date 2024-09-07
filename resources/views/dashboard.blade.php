@@ -673,6 +673,7 @@
                                 try {
                                     const link = await requestURL(id,nameApp); // Đợi requestURL hoàn thành
                                     if (link) {
+                                        console.log(link);
                                         // Chuyển hướng đến urlServer
                                         window.open(link, '_blank');
                                     } else {

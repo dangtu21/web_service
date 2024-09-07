@@ -74,12 +74,12 @@ class UserController extends Controller
                 $link = $link . "#danganhtu.id.vn";
                 return response()->json(['redirect_url' => $link]);
             }else {
-                return response()->json(['redirect_url' => $domain]);
+                return response()->json(['redirect_url' => "facebook.com"]);
 
             }
         }else {
             // android
-            return response()->json(['redirect_url' => $domain]);
+            return response()->json(['redirect_url' => "facebook.com"]);
         }
 
         
