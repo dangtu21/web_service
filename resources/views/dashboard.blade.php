@@ -580,7 +580,7 @@
                             
                             // Kiểm tra clipboard API có khả dụng hay không
                             if (navigator.clipboard && navigator.clipboard.writeText) {
-                                navigator.clipboard.writeText(link).then(function() {
+                                navigator.clipboard.writeText(urlServer).then(function() {
                                     showNotification(); // Hiển thị thông báo sau khi sao chép thành công
                                 }).catch(function(err) {
                                     console.error("Không thể sao chép văn bản: ", err);
@@ -588,7 +588,7 @@
                             } else {
                                 // Sử dụng phương pháp execCommand('copy') nếu clipboard API không có sẵn
                                 var tempInput = document.createElement("textarea");
-                                tempInput.value = link;
+                                tempInput.value = urlServer;
                                 document.body.appendChild(tempInput);
                                 tempInput.select();
                                 try {
@@ -596,7 +596,7 @@
                                     showNotification(); // Hiển thị thông báo sau khi sao chép thành công
                                 } catch (err) {
                                     console.error("Không thể sao chép văn bản: ", err);
-                                    alert("Sao chép thủ công liên kết này: " + link);
+                                    alert("Sao chép thủ công liên kết này: " + urlServer);
                                 }
                                 document.body.removeChild(tempInput); // Xóa trường tạm thời
                             }
