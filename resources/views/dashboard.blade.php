@@ -447,7 +447,7 @@
 
                                         winString += `
                                         <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitApp({{ $product->id }},'${key}')">
+                                            onclick="submitApp('${id}','${key}')">
 
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
@@ -470,7 +470,7 @@
 
                                         winString += `
                                         <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitApp({{ $product->id }},'${key}')">
+                                            onclick="submitApp('${id},'${key}')">
 
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
@@ -491,7 +491,7 @@
                                         var app = appAndroid[key]; // Lấy đối tượng thực sự từ appWindown
 
                                         winString += `
-                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer" onclick="submitApp({{ $product->id }},'${key}')">
+                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer" onclick="submitApp('${id},'${key}')">
                                             <div class="d-flex align-items-center">
                                                 <div class="text-center" style="width: 30%;">
                                                     <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">

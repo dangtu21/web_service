@@ -71,7 +71,7 @@
 													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
 												</div>
 											</div>
-											<div class="col-md-6 text-end">	<a href="auth-cover-forgot-password.html">Forgot Password ?</a>
+											<div class="col-md-6 text-end">	<a href="{{route('ForgotPassword')}}">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
@@ -87,10 +87,16 @@
                                             @if ($message = Session::get('err'))
                                             <div class="alert alert-danger alert-block">
                                                 <button type="button" class="close" data-dismiss="alert">×</button>	
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong style="color:#fff">{{ $message }}</strong>
                                             </div>
 
                                             @endif
+											@if (session('success'))
+												<div class="alert alert-success" style="color:#fff">
+													{{ session('success') }}
+												</div>
+											@endif
+
 										</form>
 									</div>
 									<div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>

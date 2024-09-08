@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Payment;
+use App\Models\User;
 
 use App\Models\Order_Detail;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,76 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Crypt;
 use \Firebase\JWT\JWT;
+use Mail;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {   
+    public function forgetPass() {
+        return view('forgotPassword');
+    }
+    public function postForgetPass(Request $request) {
+        // Xác thực dữ liệu đầu vào
+        $request->validate([
+            'email' => 'required|exists:users,email'
+        ], [
+            'email.required' => 'Vui lòng nhập địa chỉ email hợp lệ.',
+            'email.exists' => 'Email này không tồn tại trong hệ thống.'
+        ]);
+        
+        // Tạo token và chuyển đổi sang chữ hoa
+        $token = strtoupper(Str::random(10)); 
+        
+        // Tìm người dùng theo email
+        $mailUser = User::where('email', $request->email)->first();
+        $mailUser->update(['token' => $token]);
+    
+        // Gửi email
+        Mail::send('email.test', compact('mailUser'), function ($message) use ($mailUser) {
+            $message->subject('4G FUTURE');
+            $message->to($mailUser->email, $mailUser->fullname); 
+        });
+        
+        // Redirect sau khi gửi email
+        return redirect()->route('SignIn')->with('yes', 'Vui lòng kiểm tra email để thực hiện thay đổi mật khẩu.');
+    }
+    
+    
+    public function getPass(Request $request) {
+        // Lấy user_id và token từ query string
+        $user_id = $request->query('user');
+        $token = $request->query('token');
+        // Tìm người dùng theo ID
+        $user = User::find($user_id);
+
+        // Nếu không tìm thấy người dùng hoặc token không khớp, trả về 404
+        if (!$user || $user->token !== $token) {
+            return abort(404);
+        }
+
+        // Trả về view resetPassword nếu hợp lệ
+        return view('resetPassword', compact('user'));
+        }
+    public function postGetPass(Request $request) {
+        // Xác thực dữ liệu đầu vào
+        $request->validate([
+            'new_password' => 'required',
+        ]);
+
+        // Tìm người dùng và xác thực token
+        $user = User::findOrFail($request->user_id);
+        if ($user->token !== $request->token) {
+            return abort(404);  // Nếu token không khớp, trả về 404
+        }
+        $password=Hash::make($request->new_password);
+        // Cập nhật mật khẩu
+        $user->password = $password;
+        $user->token = null; // Xoá token sau khi đổi mật khẩu thành công
+        $user->save();
+
+        // Chuyển hướng về trang đăng nhập với thông báo thành công
+        return redirect()->route('SignIn')->with('success', 'Mật khẩu đã được đổi thành công.');
+    }
     public function dashboard()
     {
         $user = Auth::user();
@@ -178,6 +247,13 @@ class UserController extends Controller
             return $e;
         }
         
+    }
+    public function testmail(){
+        Mail::send('email.test',['name'=> 'test mail info'],function($email){
+            $email->subject('4G FUTURE');
+            $email->to('anhtuhanam1@gmail.com','name info');
+            
+        });
     }
     public function createTokenProduct($product_id){
         $data = [

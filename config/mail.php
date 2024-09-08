@@ -36,14 +36,15 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'host' => 'smtp.gmail.com', // Sửa lại đúng là 'smtp.gmail.com'
+            'port' => 587,
+            'encryption' => 'tls',
+            'username' => 'anhtuhanam1@gmail.com',
+            'password' => 'pgixucvvjaqvmhtg', // Đây là mật khẩu ứng dụng, đảm bảo đã tạo và sử dụng đúng
             'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'local_domain' => null,
         ],
+
 
         'ses' => [
             'transport' => 'ses',
@@ -92,8 +93,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'anhtuhanam1@gmail.com',
+        'name' => 'Demo mail',
     ],
 
     /*
