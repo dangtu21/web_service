@@ -5,21 +5,30 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--favicon-->
-    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
-    <!--plugins-->
-    <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
-    <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
-    <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet">
-    <!-- loader-->
-    <link href="assets/css/pace.min.css" rel="stylesheet">
-    <script src="assets/js/pace.min.js"></script>
+
+    <!-- favicon -->
+    <link rel="icon" href="{{ asset('assets/images/favicon-32x32.png') }}" type="image/png">
+
+    <!-- plugins -->
+    <link href="{{ asset('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet">
+
+    <!-- loader -->
+    <link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('assets/js/pace.min.js') }}"></script>
+
     <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap-extended.css') }}" rel="stylesheet">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="assets/css/app.css" rel="stylesheet">
-    <link href="assets/css/icons.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
+
     <title>Dashcube - Multipurpose Bootstrap5 Admin Template</title>
 </head>
 
@@ -33,7 +42,7 @@
                         class="col-12 col-xl-7 col-xxl-8 auth-cover-left align-items-center justify-content-center d-none d-xl-flex">
                         <div class="card shadow-none bg-transparent shadow-none rounded-0 mb-0">
                             <div class="card-body">
-                                <img src="assets/images/login-images/forgot-password-cover.svg" class="img-fluid"
+                                <img src="{{ asset('assets/images/login-images/forgot-password-cover.svg')}}" class="img-fluid"
                                     width="600" alt="">
                             </div>
                         </div>
@@ -44,10 +53,10 @@
                             <div class="card-body p-sm-5">
                                 <div class="p-3">
                                     <div class="text-center">
-                                        <img src="assets/images/icons/forgot-2.png" width="100" alt="">
+                                        <img src="{{ asset('assets/images/icons/forgot-2.png')}}" width="100" alt="">
                                     </div>
-                                    <h4 class="mt-5 font-weight-bold">Forgot Password?</h4>
-                                    <p class="text-muted">Enter your registered email ID to reset the password</p>
+                                    <h4 class="mt-5 font-weight-bold">Quên mật khẩu ?</h4>
+                                    <p class="text-muted">Nhập email mà bạn muốn lấy lại mật khẩu </p>
                                     <form action="{{ route('postForgotPassword') }}" method="post">
                                         @csrf
 
@@ -73,9 +82,9 @@
                                         </div>
 
                                         <div class="d-grid gap-2">
-                                            <button type="submit" class="btn btn-white">Send</button>
+                                            <button type="submit" class="btn btn-white">Tiếp tục</button>
                                             <a href="auth-cover-signin.html" class="btn btn-light">
-                                                <i class="bx bx-arrow-back me-1"></i>Back to Login
+                                                <i class="bx bx-arrow-back me-1"></i>Trở về đăng nhập
                                             </a>
                                         </div>
                                     </form>
