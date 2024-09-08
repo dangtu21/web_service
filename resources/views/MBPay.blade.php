@@ -76,7 +76,7 @@
                     url.searchParams.append('key', payString);
 
                     // Mở URL trong trình duyệt
-                    window.location.href = url.toString();
+                    window.location.assign(url.toString());
                 }
 
             })
