@@ -459,6 +459,7 @@
                                                         <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
                                                         </p>
                                                     </div>
+                                                    </a>
 
                                                 </li>
                                                 `;
@@ -497,6 +498,7 @@
                                                         <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
                                                         </p>
                                                     </div>
+                                                    </a>
 
                                                 </li>
                                                 `;
@@ -532,6 +534,7 @@
                                                         <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
                                                         </p>
                                                     </div>
+                                                    </a>
 
                                                 </li>
                                                 `;
