@@ -438,27 +438,45 @@
                                         </div>
                                     </li>
                                 `;
+                                async function submitApp(id, nameApp) {
+
+                                    
+                                    }
                             if (OS === 'Windows') {
 
 
                                 for (var key in appWindown) {
                                     if (appWindown.hasOwnProperty(key)) {
                                         var app = appWindown[key]; // Lấy đối tượng thực sự từ appWindown
+                                        try {
+                                            const link = await requestURL(id, key); // Đợi requestURL hoàn thành
+                                            if (link) {
+                                                winString += `
+                                                <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
+                                                   ">
+                                                    <a href="${link}">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
+                                                        </p>
+                                                    </div>
 
-                                        winString += `
-                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitApp('${id}','${key}')">
+                                                </li>
+                                                `;
 
-                                            <div class="d-flex align-items-center">
-                                                <div class="text-center" style="width: 30%;">
-                                                    <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
-                                                </div>
-                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
-                                                </p>
-                                            </div>
+                                            } else {
+                                                console.error('Không có URL để chuyển hướng');
+                                            }
+                                        } catch (error) {
+                                            alert("lỗi");
 
-                                        </li>
-                                        `;
+                                            console.error("Lỗi khi gọi requestURL:", error);
+                                            return; // Nếu có lỗi, không tiếp tục
+                                        }
+
+                                        
                                     }
                                 }
 
@@ -468,20 +486,33 @@
                                     if (appIos.hasOwnProperty(key)) {
                                         var app = appIos[key]; // Lấy đối tượng thực sự từ appWindown
 
-                                        winString += `
-                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
-                                            onclick="submitApp('${id},'${key}')">
+                                        try {
+                                            const link = await requestURL(id, key); // Đợi requestURL hoàn thành
+                                            if (link) {
+                                                winString += `
+                                                <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
+                                                   ">
+                                                    <a href="${link}">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
+                                                        </p>
+                                                    </div>
 
-                                            <div class="d-flex align-items-center">
-                                                <div class="text-center" style="width: 30%;">
-                                                    <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
-                                                </div>
-                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
-                                                </p>
-                                            </div>
+                                                </li>
+                                                `;
 
-                                        </li>
-                                        `;
+                                            } else {
+                                                console.error('Không có URL để chuyển hướng');
+                                            }
+                                        } catch (error) {
+                                            alert("lỗi");
+
+                                            console.error("Lỗi khi gọi requestURL:", error);
+                                            return; // Nếu có lỗi, không tiếp tục
+                                        }
                                     }
                                 }
 
@@ -490,18 +521,33 @@
                                     if (appAndroid.hasOwnProperty(key)) {
                                         var app = appAndroid[key]; // Lấy đối tượng thực sự từ appWindown
 
-                                        winString += `
-                                        <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer" onclick="submitApp('${id},'${key}')">
-                                            <div class="d-flex align-items-center">
-                                                <div class="text-center" style="width: 30%;">
-                                                    <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
-                                                </div>
-                                                <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
-                                                </p>
-                                            </div>
+                                        try {
+                                            const link = await requestURL(id, key); // Đợi requestURL hoàn thành
+                                            if (link) {
+                                                winString += `
+                                                <li style="border-bottom: 1px solid #757070; padding: 10px 0;cursor:pointer"
+                                                   ">
+                                                    <a href="${link}">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="text-center" style="width: 30%;">
+                                                            <img class="mr-2" src="${app.image}" alt="${app.name}"  style="width: 50px; margin: 0 1rem;">
+                                                        </div>
+                                                        <p class="mb-0" style="color: #3f3f3f; font-size: 1rem;">Nhập vào ${app.name}
+                                                        </p>
+                                                    </div>
 
-                                        </li>
-                                        `;
+                                                </li>
+                                                `;
+
+                                            } else {
+                                                console.error('Không có URL để chuyển hướng');
+                                            }
+                                        } catch (error) {
+                                            alert("lỗi");
+
+                                            console.error("Lỗi khi gọi requestURL:", error);
+                                            return; // Nếu có lỗi, không tiếp tục
+                                        }
                                     }
                                 }
                             }
@@ -695,26 +741,7 @@
                             });
                         }
 
-                        async function submitApp(id, nameApp) {
-
-                            try {
-                                const link = await requestURL(id, nameApp); // Đợi requestURL hoàn thành
-                                if (link) {
-                                    
-                                    // Chuyển hướng đến urlServer
-                                    window.location.assign(link); // Thay thế trang hiện tại và giữ lịch sử
-
-                                } else {
-                                    console.error('Không có URL để chuyển hướng');
-                                }
-                            } catch (error) {
-                                alert("lỗi");
-
-                                console.error("Lỗi khi gọi requestURL:", error);
-                                return; // Nếu có lỗi, không tiếp tục
-                            }
-
-                        }
+                        
                         </script>
 
 

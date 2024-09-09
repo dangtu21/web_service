@@ -59,8 +59,6 @@
                 let found = false;
                 console.log(data);
 
-                console.log(data);
-
                 // Kiểm tra từng đối tượng trong mảng
                 for (const item of data) {
                     if (item.addDescription && item.addDescription.includes(payString)) {
