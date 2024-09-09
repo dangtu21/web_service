@@ -409,7 +409,7 @@
                         };
 
 
-                        function listAppOpen(id) {
+                        async function listAppOpen(id) {
 
                             var OS = getOS();
                             var winString = `<ul class="list-unstyled" style="padding-left: 0;">
@@ -438,10 +438,7 @@
                                         </div>
                                     </li>
                                 `;
-                                async function submitApp(id, nameApp) {
-
-                                    
-                                    }
+                                
                             if (OS === 'Windows') {
 
 
