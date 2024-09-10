@@ -89,7 +89,7 @@
 											<td>{{$order->name}} tháng</td>
 											<td>{{ number_format($order->total*1000, 0, ',', '.') }}VND</td>
 											<td>{{$order->payment}}</td>
-											<td> {{ $order->created_at ? $order->created_at->format('d-m-Y H:i:s') : 'Chưa có dữ liệu' }}<</td>
+											<td> {{ $order->created_at ? $order->created_at->format('d-m-Y H:i:s') : 'Chưa có dữ liệu' }}</td>
 										</tr>
 									@endforeach
 								@endif
