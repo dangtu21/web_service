@@ -25,8 +25,18 @@ class UserController extends Controller
 
     public function purchaseHistory(){
         $orders = Order_Detail::where('user_id', Auth::id())
-        ->join('product', 'order_detail.product_id', '=', 'product.id') // Nối bảng Order_Detail với bảng Product
-        ->select('order_detail.*', 'product.name as product_name', 'product.price as product_price') // Chọn các cột cần thiết
+        ->join('product', 'order_details.product_id', '=', 'product.id')
+        ->select(
+            'order_details.*', // Chọn tất cả các cột từ bảng order_details
+            'product.category_id',
+            'product.title',
+            'product.price',
+            'product.time',
+            'product.capacity',
+            'product.brandwidth',
+            'product.supportSim',
+            'product.serverLocation'
+        )
         ->get();
 
         return  view('purchaseHistory',compact('orders'));

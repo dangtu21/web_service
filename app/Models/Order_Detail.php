@@ -13,6 +13,6 @@ class Order_Detail extends Model
 
     // Các thuộc tính có thể được mass-assigned
     protected $fillable = [
-        'product_id', 'price', 'num', 'total_money', 'user_id' ,'expiration_date','payment'
+        'product_id', 'price', 'num', 'total_money', 'user_id' ,'expiration_date','payment','created_at'
     ];
 }
