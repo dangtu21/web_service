@@ -148,7 +148,7 @@
                                                 <div class="p-2">
                                                     <a class="btn btn-light w-100 radius-30"
                                                         style="font-size: 12PX;"
-                                                        href = "{{route('SingIn')}}">
+                                                        href = "{{route('document')}}">
                                                         <i class="lni lni-book"></i> Hướng dẫn sử dụng
                                                     </a>
                                                 </div>
