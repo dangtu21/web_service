@@ -7,11 +7,8 @@
 @section('content')
 <div class="page-content">
     <!--breadcrumb-->
-    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3" style="
-    border: 1px solid #fff;
-    border-radius: 20px;
-">
-        <div class="breadcrumb-title pe-3">Tables</div>
+    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3" >
+        
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
