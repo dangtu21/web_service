@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {   
-
+    public function contact(){
+        return view('contact');
+    }
     public function purchaseHistory(){
         $orders = Order_Detail::where('user_id', Auth::id())
         ->join('product', 'order_details.product_id', '=', 'product.id')
@@ -524,6 +526,7 @@ class UserController extends Controller
 
     
         try{
+        
             $decoded = JWTAuth::getJWTProvider()->decode($token);
             // Tìm kiếm bản ghi trong Order_Detail dựa trên product_id và user_id
             $orderDetail = Order_Detail::where('product_id', $decoded['product_id'])

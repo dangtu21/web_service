@@ -60,6 +60,7 @@ Route::prefix('user')->middleware('user')->group(function (){
     // web.php
     Route::get('/paymentSuccess', [UserController::class, 'checkPaymentMain'])->name('paymentSuccess');
     Route::get('/purchaseHistory', [UserController::class, 'purchaseHistory'])->name('purchaseHistory');
+    Route::get('/contact', [UserController::class, 'contact'])->name('contact');
 
 
 });
