@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="row justify-content-center"
                                     style="margin:10px 20px;padding:10px 20px; color: #fff; background-color: rgb(255 255 255 / 15%); border-color: rgb(255 255 255 / 35%);border-radius:20px">
-                                    <button class="btn btn-light my-3 radius-30 mx-auto" id="synchronize"
+                                    <button class="btn btn-light my-3 radius-30 mx-auto" id="synchronize" style="font-size: small;"
                                         onclick="listAppOpen('{{ $product->id }}' )">
                                         <i class="fadeIn animated bx bx-wifi"></i>Bấm Vào Đây Để Đồng Bộ Máy Chủ
                                         📲
