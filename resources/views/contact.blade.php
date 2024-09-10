@@ -7,7 +7,7 @@
 @section('content')
 <div class="page-content">
     <!--breadcrumb-->
-    <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="m-lg-5 m-sm-1 row align-items-stretch no-gutters contact-wrap py-3 px-3" style="border: 1px solid #fff; border-radius: 20px;">
         <div class="breadcrumb-title pe-3">Tables</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
@@ -24,11 +24,11 @@
         <div class="row align-items-stretch no-gutters contact-wrap">
             <div class="col-md-12">
                 <div class="form h-100">
-                    <h3>Get Started</h3>
+                    <h3 >Liên hệ</h3>
                     <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">
-                                <label for="" class="col-form-label">Name *</label>
+                                <label for="" class="col-form-label">Tên *</label>
                                 <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
                             </div>
                             <div class="col-md-6 form-group mb-3">
@@ -37,22 +37,10 @@
                                     placeholder="Your email">
                             </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-md-12 form-group mb-3">
-                                <label for="budget" class="col-form-label">Budget</label>
-                                <select class="custom-select" id="budget" name="budget">
-                                    <option selected="">Choose...</option>
-                                    <option value="$1000 below">&lt; $1,000</option>
-                                    <option value="$2,000 - $5,000">$2,000 - $5,000</option>
-                                    <option value="$5,000 - $15,000">$5,000 - $15,000</option>
-                                    <option value="$15,000 - $25,000">$15,000 - $25,000</option>
-                                    <option value="$25,000 >">$25,000 &gt;</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group mb-3">
-                                <label for="message" class="col-form-label">Message *</label>
+                                <label for="message" class="col-form-label">Thông tin cần hỗ trợ *</label>
                                 <textarea class="form-control" name="message" id="message" cols="30" rows="4"
                                     placeholder="Write your message"></textarea>
                             </div>
