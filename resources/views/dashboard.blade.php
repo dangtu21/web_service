@@ -16,16 +16,16 @@
 
                     <main>
                         <div class="conten">
-                            <div class="row contacts w-100 mx-auto"
+                            <div class="row py-3 contacts w-100 mx-auto"
                                 style="background: rgb(0 0 0 / 15%); border-radius:30px">
-                                <div class="row invoice-details ">
+                                <div class="col invoice-details ">
                                     </br>
                                     <div class="col text-center">
                                         <img src="{{ asset('assets/images/avatars/avatar-7.png') }}" width="100 "
                                             height="100" class="rounded-circle" alt="Avatar">
                                     </div>
                                 </div>
-                                <div class="row invoice-to text-center">
+                                <div class="col invoice-to text-left">
                                     <div class="text-gray-light">Thông tin tài khoản</div>
                                     <h2 class="to">{{$user->email}}</h2>
                                     <div class="time">Đã tham gia: 10 ngày</div>
@@ -148,7 +148,7 @@
                                                 <div class="p-2">
                                                     <a class="btn btn-light w-100 radius-30"
                                                         style="font-size: 12PX;"
-                                                        >
+                                                        href = "{{route('SingIn')}}">
                                                         <i class="lni lni-book"></i> Hướng dẫn sử dụng
                                                     </a>
                                                 </div>
