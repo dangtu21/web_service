@@ -87,7 +87,7 @@
 
                 </li>
                 <li>
-                    <a class="has-arrow" href="javascript:;">
+                    <a class="has-arrow" href="{{route('server')}}">
                         <div class="parent-icon"><i class="bx bx-diamond"></i>
                         </div>
                         <div class="menu-title">Trạng thái máy chủ </div>

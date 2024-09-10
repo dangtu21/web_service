@@ -22,9 +22,19 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {   
+
+    public function purchaseHistory(){
+        $orders = Order_Detail::where('user_id', Auth::id())
+        ->join('product', 'order_detail.product_id', '=', 'product.id') // Nối bảng Order_Detail với bảng Product
+        ->select('order_detail.*', 'product.name as product_name', 'product.price as product_price') // Chọn các cột cần thiết
+        ->get();
+
+        return  view('purchaseHistory',compact('orders'));
+    }
     public function forgetPass() {
         return view('forgotPassword');
     }
+
     public function postForgetPass(Request $request) {
         // Xác thực dữ liệu đầu vào
         $request->validate([
