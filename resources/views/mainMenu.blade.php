@@ -98,7 +98,7 @@
 
                 <li class="menu-label">TÀI CHÍNH</li>
                 <li>
-                    <a class="has-arrow" href="{{ route('history')}}">
+                    <a class="has-arrow" href="{{ route('purchaseHistory')}}">
                         <div class="parent-icon"><i class="bx bx-message-square-edit"></i>
                         </div>
                         <div class="menu-title">Lịch sử mua hàng</div>
