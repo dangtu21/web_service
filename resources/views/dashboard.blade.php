@@ -513,7 +513,7 @@
                             }
                         }
 
-                    } else if (OS == 'Android') {
+                    } else {
                         for (var key in appAndroid) {
                             if (appAndroid.hasOwnProperty(key)) {
                                 var app = appAndroid[key]; // Lấy đối tượng thực sự từ appWindown
