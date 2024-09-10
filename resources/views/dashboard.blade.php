@@ -16,7 +16,7 @@
 
                     <main>
                         <div class="conten">
-                            <div class="row contacts w-75 mx-auto"
+                            <div class="row contacts w-100 mx-auto"
                                 style="background: rgb(0 0 0 / 15%); border-radius:30px">
                                 <div class="row invoice-details ">
                                     </br>
@@ -146,17 +146,17 @@
                                                     </button>
                                                 </div>
                                                 <div class="p-2">
-                                                    <button class="btn btn-light w-100 radius-30"
+                                                    <a class="btn btn-light w-100 radius-30"
                                                         style="font-size: 12PX;"
-                                                        onclick="window.location.href='http://13.213.30.33:8000/user/document'">
+                                                        >
                                                         <i class="lni lni-book"></i> Hướng dẫn sử dụng
-                                                    </button>
+                                                    </a>
                                                 </div>
                                                 <div class="p-2">
-                                                    <button class="btn btn-light w-100 radius-30"
+                                                    <a class="btn btn-light w-100 radius-30"
                                                         style="font-size: 12PX;" href="https://mangvip.com/idapple/">
                                                         <i class="lni lni-apple"></i> Lấy id Apple
-                                                    </button>
+                                                    </a>
                                                 </div>
                                                 <div class="p-2">
                                                     <button class="btn btn-light w-100 radius-30"

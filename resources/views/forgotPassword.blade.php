@@ -56,7 +56,7 @@
                                         <img src="{{ asset('assets/images/icons/forgot-2.png')}}" width="100" alt="">
                                     </div>
                                     <h4 class="mt-5 font-weight-bold">Quên mật khẩu ?</h4>
-                                    <p class="text-muted">Nhập email mà bạn muốn lấy lại mật khẩu </p>
+                                    <p class="text-muted" style="color:#fff">Nhập email mà bạn muốn lấy lại mật khẩu </p>
                                     <form action="{{ route('postForgotPassword') }}" method="post">
                                         @csrf
 
@@ -83,7 +83,7 @@
 
                                         <div class="d-grid gap-2">
                                             <button type="submit" class="btn btn-white">Tiếp tục</button>
-                                            <a href="auth-cover-signin.html" class="btn btn-light">
+                                            <a href="{{route('SingIn')}}" class="btn btn-light">
                                                 <i class="bx bx-arrow-back me-1"></i>Trở về đăng nhập
                                             </a>
                                         </div>
