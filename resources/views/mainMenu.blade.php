@@ -125,7 +125,7 @@
 
 
                 <li>
-                    <a href="route('contact')">
+                    <a href="{{route('contact')}}">
                         <div class="parent-icon"><i class="bx bx-support"></i>
                         </div>
                         <div class="menu-title">Gửi hỗ trợ tới Admin</div>
