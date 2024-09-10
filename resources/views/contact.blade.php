@@ -21,12 +21,12 @@
 
     </div>
     <div class="container">
-        <div class="m-lg-5 m-sm-1 row align-items-stretch no-gutters contact-wrap py-3 px-3"
+        <div class="m-lg-5 m-sm-1 row align-items-stretch no-gutters contact-wrap py-4 px-4"
             style="border: 1px solid #fff; border-radius: 20px;">
             <div class="col-md-12">
                 <div class="form h-100">
                     <h3>Liên hệ</h3>
-                    <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
+                    <form class="mb-3" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">
                                 <label for="" class="col-form-label">Tên *</label>
