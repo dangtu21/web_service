@@ -54,6 +54,9 @@ Route::prefix('user')->middleware('user')->group(function (){
         return view('listApp');
     })->name('listApp');
     
+    Route::get("/server", function() {
+        return view('server');
+    })->name('server');
     // web.php
     Route::get('/paymentSuccess', [UserController::class, 'checkPaymentMain'])->name('paymentSuccess');
 
