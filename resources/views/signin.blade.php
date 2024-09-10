@@ -21,7 +21,7 @@
     <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
 
-	<title>Dashcube - Multipurpose Bootstrap5 Admin Template</title>
+	<title>4G FUTURE</title>
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -49,8 +49,8 @@
 										<img src="{{ asset('assets/images/logo-icon.png')}}" width="60" alt="">
 									</div>
 									<div class="text-center mb-4">
-										<h5 class="">Dashcube Admin</h5>
-										<p class="mb-0">Please log in to your account</p>
+										<h5 class="">ĐĂNG NHẬP</h5>
+										<p class="mb-0">Hãy đăng nhập tài khoản của bạn</p>
 									</div>
 									<div class="form-body">
 										<form class="row g-3" action="{{route('LogIn')}}" method="post">
@@ -68,19 +68,19 @@
 											<div class="col-md-6">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+													<label class="form-check-label" for="flexSwitchCheckChecked">Nhớ mật khẩu</label>
 												</div>
 											</div>
-											<div class="col-md-6 text-end">	<a href="{{route('ForgotPassword')}}">Forgot Password ?</a>
+											<div class="col-md-6 text-end">	<a href="{{route('ForgotPassword')}}">Quên mật khẩu ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-light">Sign in</button>
+													<button type="submit" class="btn btn-light">Đăng nhập</button>
 												</div>
 											</div>
 											<div class="col-12">
 												<div class="text-center">
-													<p class="mb-0">Don't have an account yet? <a href="{{route('SignUp')}}">Sign up here</a>
+													<p class="mb-0">Bạn chưa có tài khoản? <a href="{{route('SignUp')}}">Đăng kí tài khoản</a>
 													</p>
 												</div>
 											</div>
@@ -99,7 +99,7 @@
 
 										</form>
 									</div>
-									<div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
+									<div class="login-separater text-center mb-5"> <span>Hoặc đăng nhập bằng </span>
 										<hr>
 									</div>
 									<div class="list-inline contacts-social text-center">
