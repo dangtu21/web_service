@@ -34,7 +34,7 @@
     <div class="wrapper">
         <!--sidebar wrapper -->
         <div class="sidebar-wrapper" data-simplebar="true">
-            <div class="sidebar-header" style="z-index:1000">
+            <div class="" style="z-index:1000">
                 <div>
                     <img src="{{ asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
                 </div>
