@@ -471,69 +471,11 @@
                                         </div>
                                     </a>
                                     <div class="header-notifications-list">
+
                                         
-										<a class="dropdown-item" href="javascript:;">
-											<div class="d-flex align-items-center">
-                      <div class="user-online">
-                      <?php
-                        
-                        echo "<img src=\"" . url('assets/images/avatars/avatar_4.png') . "\" class=\"msg-avatar\" alt=\"user avatar\">";
-                        ?>
-                       <img src='{{ asset("/assets/images/avatars/avatar-7.png") }}' class=" msg-avatar"
-                                                        alt="user avatar">
-
-
-                                                    ?>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="msg-name">Katherine Pechon <span
-                                                            class="msg-time float-end">15
-                                                            min ago</span></h6>
-                                                    <p class="msg-info">Making this the first true generator</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="javascript:;">
-                                            <div class="d-flex align-items-center">
-                                                <div class="notify bg-light-success text-success"><i
-                                                        class="bx bx-check-square"></i>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="msg-name">Your item is shipped <span
-                                                            class="msg-time float-end">5 hrs
-                                                            ago</span></h6>
-                                                    <p class="msg-info">Successfully shipped your item</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="javascript:;">
-                                            <div class="d-flex align-items-center">
-                                                <div class="notify bg-light-primary">
-                                                    <img src="{{ asset('assets/images/app/github.png')}}" width="25"
-                                                        alt="user avatar">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="msg-name">New 24 authors<span
-                                                            class="msg-time float-end">1 day
-                                                            ago</span></h6>
-                                                    <p class="msg-info">24 new authors joined last week</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="javascript:;">
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-online">
-                                                    <img src="{{ asset('assets/images/avatars/avatar-7.png')}}"
-                                                        class="msg-avatar" alt="user avatar">
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h6 class="msg-name">Peter Costanzo <span
-                                                            class="msg-time float-end">6 hrs
-                                                            ago</span></h6>
-                                                    <p class="msg-info">It was popularised in the 1960s</p>
-                                                </div>
-                                            </div>
-                                        </a>
+                                        
+                                        
+                                        
                                     </div>
                                     <div class="text-center msg-footer">
                                         <a href="javascript:;" class="btn btn-light w-100">View All Notifications</a>
