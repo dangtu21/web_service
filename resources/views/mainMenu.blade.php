@@ -34,7 +34,7 @@
     <div class="wrapper">
         <!--sidebar wrapper -->
         <div class="sidebar-wrapper" data-simplebar="true">
-            <div class="" style="z-index:1000">
+            <div class="sidebar-header" style="z-index:1000">
                 <div>
                     <img src="{{ asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
                 </div>
@@ -149,7 +149,7 @@
         <!--end sidebar wrapper -->
         <!--start header -->
         <header>
-            <div class="topbar d-flex align-items-center">
+            <div class="topbar d-flex align-items-center" style="z-index:11">
                 <nav class="navbar navbar-expand gap-3">
                     <div class="mobile-toggle-menu"><i class="bx bx-menu"></i>
                     </div>
