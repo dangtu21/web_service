@@ -148,8 +148,8 @@
         </div>
         <!--end sidebar wrapper -->
         <!--start header -->
-        <header>
-            <div class="topbar d-flex align-items-center" style="z-index:11">
+        <header style="z-index:10">
+            <div class="topbar d-flex align-items-center">
                 <nav class="navbar navbar-expand gap-3">
                     <div class="mobile-toggle-menu"><i class="bx bx-menu"></i>
                     </div>
