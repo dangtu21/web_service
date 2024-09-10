@@ -33,9 +33,8 @@
     <!--wrapper-->
     <div class="wrapper">
         <!--sidebar wrapper -->
-        <div class="
-        " data-simplebar="true">
-            <div class="sidebar-header" style="z-index:1000">
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
                 <div>
                     <img src="{{ asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
                 </div>
@@ -125,7 +124,14 @@
                 </li>
 
 
-                
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-line-chart"></i>
+                        </div>
+                        <div class="menu-title">Thống kê lưu lượng </div>
+                    </a>
+
+                </li>
                 <li>
                     <a href="faq.html">
                         <div class="parent-icon"><i class="bx bx-support"></i>
@@ -142,7 +148,7 @@
         </div>
         <!--end sidebar wrapper -->
         <!--start header -->
-        <header style="z-index:10">
+        <header>
             <div class="topbar d-flex align-items-center">
                 <nav class="navbar navbar-expand gap-3">
                     <div class="mobile-toggle-menu"><i class="bx bx-menu"></i>
