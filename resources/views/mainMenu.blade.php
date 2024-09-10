@@ -34,18 +34,19 @@
     <div class="wrapper">
         <!--sidebar wrapper -->
         <div class="sidebar-wrapper" data-simplebar="true">
-            <div class="sidebar-header" style="z-index:1000">
-                <div>
-                    <img src="{{ asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
-                </div>
-                <div>
-                    <h4 class="logo-text">4GFuture</h4>
-                </div>
-                <div class="toggle-icon ms-auto"><i class="bx bx-arrow-back"></i>
-                </div>
-            </div>
+            
             <!--navigation-->
             <ul class="metismenu" id="menu">
+                <div class="sidebar-header" style="z-index:1000;padding : 0">
+                    <div>
+                        <img src="{{ asset('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+                    </div>
+                    <div>
+                        <h4 class="logo-text">4GFuture</h4>
+                    </div>
+                    <div class="toggle-icon ms-auto"><i class="bx bx-arrow-back"></i>
+                    </div>
+                </div>
                 <li>
                     <a href="{{ route('home')}}" class="has-arrow">
                         <div class="parent-icon"><i class="bx bx-home-alt"></i>
