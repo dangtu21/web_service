@@ -141,7 +141,8 @@ class UserController extends Controller
             $domain = $domain . "&flag=";
             $domain = $domain . $request->app;
         }
-       
+       $clash = "clash://install-config?url=";
+       $clash = $clash.$domain;
         if($request->OS==="Windows"){
             if($request->app==="Shadowrocket"){
                 // Mã hóa URL bằng base64
@@ -152,7 +153,7 @@ class UserController extends Controller
                 $link = $link . "#danganhtu.id.vn";
                 return response()->json(['redirect_url' => $link]);
             }else {
-                return response()->json(['redirect_url' => $domain]);
+                return response()->json(['redirect_url' => $clash]);
 
             }
         }else if($request->OS==="iOS"){
@@ -165,13 +166,13 @@ class UserController extends Controller
                 $link = $link . "#danganhtu.id.vn";
                 return response()->json(['redirect_url' => $link]);
             }else {
-                return response()->json(['redirect_url' => $domain]);
+                return response()->json(['redirect_url' => $clash]);
 
             }
         }else {
 
             // android
-            return response()->json(['redirect_url' => $domain]);
+            return response()->json(['redirect_url' => $clash]);
         }
 
         
