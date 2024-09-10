@@ -28,7 +28,7 @@
                                             </div>
                                         </div>
                                         <div class="col invoice-to text-left">
-                                            <div class="text-muted" style="color:#fff">Thông tin tài khoản</div>
+                                            <div >Thông tin tài khoản</div>
                                             <h2 class="to">{{ $user->email }}</h2>
                                             <div class="time">Đã tham gia: 10 ngày</div>
                                             <div class="id">ID định danh: UCE515{{ $user->id }}</div>
