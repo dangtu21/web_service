@@ -20,15 +20,15 @@
                                 <div class="col-lg-6 col-12">
                                     <div class="row py-3 contacts w-100 mx-auto"
                                         style="background: rgba(0, 0, 0, 0.15); border-radius: 30px;">
-                                        <div class="col-lg-6 col-12 invoice-details">
+                                        <div class="col invoice-details">
                                             <br>
                                             <div class="text-center">
                                                 <img src="{{ asset('assets/images/avatars/avatar-7.png') }}" width="100"
                                                     height="100" class="rounded-circle" alt="Avatar">
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-12 invoice-to text-left">
-                                            <div class="text-muted">Thông tin tài khoản</div>
+                                        <div class="col invoice-to text-left">
+                                            <div class="text-muted" style="color:#fff">Thông tin tài khoản</div>
                                             <h2 class="to">{{ $user->email }}</h2>
                                             <div class="time">Đã tham gia: 10 ngày</div>
                                             <div class="id">ID định danh: UCE515{{ $user->id }}</div>
