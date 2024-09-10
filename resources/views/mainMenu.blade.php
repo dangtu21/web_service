@@ -460,7 +460,7 @@
 
                             <li class="nav-item dropdown dropdown-large">
                                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#"
-                                    data-bs-toggle="dropdown"><span class="alert-count">7</span>
+                                    data-bs-toggle="dropdown"><span class="alert-count">0</span>
                                     <i class="bx bx-bell"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
