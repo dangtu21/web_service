@@ -344,7 +344,7 @@
                         link: urlServer,
                         image: "{{asset('assets/images/app/sing-box.png')}}"
                     },
-                    Shadowrocket: {
+                    Shadownrocket: {
                         name: "Shadowrocket",
                         link: urlServer,
                         image: "{{asset('assets/images/app/shadowrocket.jpg')}}"
