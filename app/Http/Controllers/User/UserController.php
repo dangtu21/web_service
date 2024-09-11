@@ -157,7 +157,7 @@ class UserController extends Controller
 
             }
         }else if($request->OS==="iOS"){
-            if($request->app==="Shadowrocket"){
+            if($request->app==="Shadownrocket"){
                 // Mã hóa URL bằng base64
                 $code = base64_encode($domain);
                 
