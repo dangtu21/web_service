@@ -183,6 +183,7 @@ class UserController extends Controller
         // Lấy các query parameters từ request
         $token = $request->query('token');
         $flag = $request->query('flag');
+        dd($request->all());
         $vmess_links = '
                 STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
                 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
@@ -535,7 +536,7 @@ class UserController extends Controller
             ->first();
 
             if ($orderDetail) {
-                if($flag == 'shadownrocket'){
+                if($flag == 'Shadownrocket'){
                     return response($shadownrocket);
                 }else if($flag == 'clash'){
                     return response($clash);
