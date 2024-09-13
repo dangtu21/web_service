@@ -185,6 +185,9 @@
 	<!--plugins-->
 	<script src="{{ asset('assets/js/jquery.min.js')}}"></script>
 	<script>
+    var assetUrl = "{{ asset('assets/images/document/shadownrocket.png') }}";
+</script>
+	<script>
 	$(".switcher-btn").on("click", function() {
 		$(".switcher-wrapper").toggleClass("switcher-toggled")
 	}), $(".close-switcher").on("click", function() {

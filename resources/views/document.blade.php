@@ -232,8 +232,11 @@
             </div>
         </div>
     </div>
-
+    <script>
+    var assetUrl = "{{ asset('assets/images/document/shadownroket.png') }}";
+</script>
     <script src="{{ asset('assets/js/document.js') }}">
     </script>
+
 </div>
 @endsection
