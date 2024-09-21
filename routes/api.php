@@ -25,12 +25,18 @@ Route::group([
 
 ], function ($router) {
 
-    Route::post('login11', [AuthController::class,'login']);
+    Route::post('login', [AuthController::class,'login']);
     Route::post('logout',  [AuthController::class,'logout']);
+    Route::post('register',  [AuthController::class,'register']);
     Route::post('refresh', [AuthController::class,'refresh']);
     Route::get('me', [AuthController::class,'me']);
     Route::get('server', [AuthController::class,'getServer']);
     Route::get('subscribe', [AuthController::class, 'subscribe']);
+    Route::get('getProductUser', [AuthController::class, 'getProductUser']);
+    Route::get('getProduct', [AuthController::class, 'getProduct']);
+    Route::post('getLink', [AuthController::class, 'getLink']);
+    Route::post('postForgetPass', [AuthController::class, 'postForgetPass']);
+    Route::get('getOrderDetail', [AuthController::class, 'getOrderDetail']);
 
     Route::get('shadownroket', [AuthController::class, 'subscribe']);
 

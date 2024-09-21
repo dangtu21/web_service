@@ -142,7 +142,7 @@ class UserController extends Controller
             $domain = $domain . $request->app;
         }
        $clash = "clash://install-config?url=";
-       $clash = $clash.rawurlencode($domain);;
+       $clash = $clash.rawurlencode($domain);
         if($request->OS==="Windows"){
             if($request->app==="Shadownrocket"){
                 // Mã hóa URL bằng base64

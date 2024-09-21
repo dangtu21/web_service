@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Models\User;
 use App\Models\Order_Detail;
+use App\Models\Product;
+use Mail;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Hash;
+
 
 class AuthController extends Controller
 {
@@ -17,7 +23,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','refresh']]);
+        $this->middleware('auth:api', ['except' => ['login','refresh','postForgetPass','register']]);
     }
 
     /**
@@ -28,10 +34,10 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
-      
         if (! $token = auth('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+        
         $data = [
             'sub' => auth('api')->user()->id,
             'random'=>rand().time(),
@@ -42,7 +48,186 @@ class AuthController extends Controller
 
         return $this->respondWithToken($token,$refreshToken);
     }
+    public function postForgetPass(Request $request) {
+        // Xác thực dữ liệu đầu vào
+        
+      
+        // Xác thực email trước khi tiếp tục
+        $request->validate([
+            'email' => 'required|email|exists:users,email'
+        ], [
+            'email.required' => 'Vui lòng nhập địa chỉ email hợp lệ.',
+            'email.email' => 'Địa chỉ email không đúng định dạng.',
+            'email.exists' => 'Email này không tồn tại trong hệ thống.'
+        ]);
+        
+        
+        // Tạo token và chuyển đổi sang chữ hoa
+        $token = strtoupper(Str::random(10)); 
+        
+        // Tìm người dùng theo email
+        $mailUser = User::where('email',  $request->email)->first();
+        $mailUser->update(['token' => $token]);
+        
+        // Gửi email
+        Mail::send('email.test', compact('mailUser'), function ($message) use ($mailUser) {
+            $message->subject('4G FUTURE');
+            $message->to($mailUser->email, $mailUser->fullname); 
+        });
+        
+        // Redirect sau khi gửi email
+        return response()->json(['success'=>"Đã gửi email"],200);
+    }
+    // Phương thức đăng ký
+    public function register(Request $req)
+    {    
+      
+        // Kiểm tra xem email đã tồn tại chưa
+        if (User::where('email', $req->email)->exists()) {
+            // Nếu email đã tồn tại, trả về với thông báo lỗi
+            return response()->json(['error'=>"email đã tồn tại"],422);
+        }
+        // Mã hóa mật khẩu trước khi lưu
+        $req->merge(['password' => Hash::make($req->password)]);
+        $input = $req->all();
+        $input['role'] = 0; 
+        try {
+            // Tạo người dùng mới
+            User::create($input);
+            return response()->json(['success'=>"Thêm người dùng thành công"],200);
+        } catch (Throwable $th) {
+            // Trả về với thông báo lỗi
+            
+            return response()->json(['error'=> "Có lỗi xảy ra khi tạo người dùng: " . $th->getMessage()],405);
+        }
+    }
+    public function getProduct(){
+        $products = Product::all();
+        return response()->json($products);
+    }
+    public function getOrderDetail(){
+        $orders = Order_Detail::where('user_id', auth('api')->user()->id)
+        ->join('product', 'order_details.product_id', '=', 'product.id')
+        ->select(
+            'order_details.*', // Chọn tất cả các cột từ bảng order_details
+            'product.category_id',
+            'product.title',
+            'product.price',
+            'product.time',
+            'product.capacity',
+            'product.brandwidth',
+            'product.supportSim',
+            'product.serverLocation'
+        )
+        ->get();
+        return response()->json($orders);
+    }
+    public function getProductUser()
+    {
+        $orders = Order_Detail::where('user_id', auth('api')->user()->id)
+        ->join('product', 'order_details.product_id', '=', 'product.id')
+        ->select(
+            'order_details.*', // Chọn tất cả các cột từ bảng order_details
+            'product.category_id',
+            'product.title',
+            'product.price',
+            'product.time',
+            'product.capacity',
+            'product.brandwidth',
+            'product.supportSim',
+            'product.serverLocation'
+        )
+        ->get();
+        return response()->json($orders);
+    }
+    public function getLink(){
+        // Tạo URL cơ bản
+        $link = "sub://";
+        $request= request(['OS','product_id']);
+        $domain = "http://danganhtu.id.vn/api/subscribe?token=";
+        // Kiểm tra xem 'product_id' có tồn tại trong mảng không
+        if (isset($request['product_id'])) {
+            // Tạo token cho sản phẩm bằng cách lấy 'product_id' từ mảng
+            $token = $this->createTokenProduct($request['product_id']);
+            
+            // Nối token vào URL
+            $domain = $domain . $token;
+            $base_url = $domain;
+        } else {
+            // Xử lý lỗi khi 'product_id' không tồn tại
+            return response()->json(['error' => 'Product ID is missing'], 400);
+        }
+        $clash = "clash://install-config?url=";
+        if($request['OS']==="Windows"){
+            $SingBox = $clash.rawurlencode($domain . "&flag=SingBox");
+            $ClashMeta = $clash.rawurlencode($domain . "&flag=ClashMeta");
+            $Karing =$clash.rawurlencode( $domain . "&flag=Karing");
+            $ClashWin =$clash.rawurlencode( $domain . "&flag=ClashWin");
+            return response()->json([
+                'base_url'=>$base_url,
+                'SingBox'=>$SingBox,
+                'ClashMeta'=>$ClashMeta,
+                'Karing'=>$Karing,
+                'ClashWin'=>$ClashWin
+            ]);
+        }else if($request['OS']==="iOS"){
+            $SingBox = $clash.rawurlencode($domain . "&flag=SingBox");
+            $Karing =$clash.rawurlencode( $domain . "&flag=Karing");
+            $Stash =$clash.rawurlencode( $domain . "&flag=Stash");
+            $code = base64_encode($domain . "&flag=Shadownrocket");
+            // Nối phần mã hóa vào link
+            $link = $link . $code;
+            $link = $link . "#danganhtu.id.vn";
+            return response()->json([
+                'base_url'=>$base_url,
+                'SingBox'=>$SingBox,
+                'Stash'=>$Stash,
+                'Karing'=>$Karing,
+                'Shadownrocket'=>$link
+            ]);
+        }else{
+            $SingBox = $clash.rawurlencode($domain . "&flag=SingBox");
+            $V2RayNG =$clash.rawurlencode( $domain . "&flag=V2RayNG");
+            $NekoBox =$clash.rawurlencode( $domain . "&flag=NekoBox");
+            $ClashAndroid = base64_encode($domain . "&flag=ClashAndroid");
+            
+            return response()->json([
+                'base_url'=>$base_url,
+                'SingBox'=>$SingBox,
+                'NekoBox'=>$NekoBox,
+                'V2RayNG'=>$V2RayNG,
+                'ClashAndroid'=>$ClashAndroid
+            ]);
+        }
+        
+    }
+    public function getLinkWindow(){
+        // Tạo URL cơ bản
+        $link = "sub://";
+  
+        $domain = "http://danganhtu.id.vn/api/subscribe?token=";
+        
+        // Tạo token cho sản phẩm
+        $token = $this->createTokenProduct($request->product_id);
+        // Nối token vào URL
+        $domain = $domain . $token;
+        $base_url=$domain ;
+        $SingBox = $domain . "&flag=SingBox";
+        $ClashMeta = $domain . "&flag=ClashMeta";
+        $Karing = $domain . "&flag=Karing";
+        $ClashWin = $domain . "&flag=ClashWin";
 
+
+    }
+    public function createTokenProduct($product_id){
+        $data = [
+            'sub' => auth('api')->user()->id,
+            'product_id'=>$product_id,
+            'random'=>rand().time()
+        ];
+        $token=JWTAuth::getJWTProvider()->encode($data);
+        return $token;
+    }
     /**
      * Get the authenticated User.
      *
@@ -232,16 +417,7 @@ class AuthController extends Controller
         // Chuyển hướng người dùng đến liên kết
         return redirect()->away($link);
     }
-    public static function createTokenProduct($product_id){
-        $data = [
-            'sub' => 1,
-            'product_id'=>$product_id,
-            'random'=>rand().time(),
-            'exp' => time() + config('jwt.refresh_ttl')
-        ];
-        $token=JWTAuth::getJWTProvider()->encode($data);
-        return $token;
-    }
+    
 
     public function getServer(){
         try{

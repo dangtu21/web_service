@@ -83,7 +83,7 @@
 
                                         <div class="d-grid gap-2">
                                             <button type="submit" class="btn btn-white">Tiếp tục</button>
-                                            <a href="{{route('SingIn')}}" class="btn btn-light">
+                                            <a href="{{route('SignIn')}}" class="btn btn-light">
                                                 <i class="bx bx-arrow-back me-1"></i>Trở về đăng nhập
                                             </a>
                                         </div>
