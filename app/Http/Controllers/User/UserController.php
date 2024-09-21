@@ -186,6 +186,7 @@ class UserController extends Controller
       
         $vmess_links = '
                 STATUS=⛔HSD:20-09-2024 ✅ Dùng: 23,58 GB/2.000.000,00 GB
+                vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICJ2cHMxIiwKICAiYWRkIjogInd3dy5kYW5nYW5odHUuaWQudm4iLAogICJwb3J0IjogODAsCiAgImlkIjogIjMxNzBkZTdjLTQyNjItNDMxNS1mYWMxLTUzMzliOTZmODY1ZCIsCiAgImFpZCI6IDAsCiAgIm5ldCI6ICJ3cyIsCiAgInR5cGUiOiAibm9uZSIsCiAgImhvc3QiOiAidjkudGlrdG9rY2RuLmNvbSIsCiAgInBhdGgiOiAiLyIsCiAgInRscyI6ICJub25lIgp9
                 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY3My5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B1%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B373%20HNI%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
                 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXYyNS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B2%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B325%20HBO-MANGVIP&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
                 vmess://YXV0bzo2MDI5MGJiMC00NTQzLTQxNGUtOWM4YS04MzI3NjY4NWMwNGRAbXY5MS5tYW5ndmlwLmNvbTo4MA==?tfo=0&remark=%5B3%5D%E2%80%BA%20%F0%9F%87%BB%F0%9F%87%B391%20ICO%20-%20MANGVIP.&alterId=0&obfs=websocket&obfsParam=v9.tiktokcdn.com
